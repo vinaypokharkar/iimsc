@@ -44,21 +44,21 @@ const Differentiators = () => {
           {differentiators.map((item, index) => (
             <div 
               key={item.number} 
-              className={`relative p-10 rounded-3xl bg-white/80 backdrop-blur-sm overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 ${index === 0 || index === 3 ? 'md:col-span-2' : ''}`}
+              className={`relative p-20 rounded-3xl bg-white/80 backdrop-blur-sm overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 ${index === 0 || index === 3 ? 'md:col-span-2' : ''}`}
             >
               <div className="relative z-10 flex flex-col h-full justify-between gap-8">
                 <div>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5C4DFF]/10 to-[#33348D]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  {/* <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5C4DFF]/10 to-[#33348D]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                     <span className="text-xl font-bold text-[#5C4DFF]">{item.number}</span>
-                  </div>
+                  </div> */}
                   <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4 group-hover:text-[#33348D] transition-colors duration-300">{item.title}</h3>
                   <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">{item.description}</p>
                 </div>
               </div>
               
               {/* Decorative Number */}
-              <div className="absolute -right-10 -bottom-20 opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
-                <span className="text-[15rem] font-bold text-black leading-none select-none">
+              <div className="absolute -right-8 -bottom-12 opacity-80 transition-opacity duration-500 pointer-events-none">
+                <span className="text-[15rem] font-bold bg-gradient-to-r from-[#9a9bff] via-[#5f61ff] to-[#c5c5c5] bg-clip-text text-transparent leading-none select-none">
                   {item.number}
                 </span>
               </div>

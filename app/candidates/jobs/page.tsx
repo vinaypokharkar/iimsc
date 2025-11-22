@@ -1,0 +1,79 @@
+import React from 'react';
+import Link from 'next/link';
+import { MapPin, Clock, ArrowRight, Search } from 'lucide-react';
+
+export default function CandidateJobs() {
+  return (
+    <main className="min-h-screen pt-24 pb-12 relative overflow-hidden font-instrumental-sans">
+      {/* Global Background Elements */}
+      <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#1E1E1E]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#33348D]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 z-0"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-medium text-black tracking-tight mb-6">
+              Open <span className="text-[#1E1E1E] italic">Positions</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+              Explore exciting career opportunities across Europe's leading industries.
+            </p>
+          </div>
+
+          {/* Search/Filter Placeholder */}
+          <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-200 mb-12 flex flex-col md:flex-row gap-4">
+             <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input type="text" placeholder="Search for jobs (e.g. Welder, Nurse)" className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#5C4DFF]/20 focus:border-[#5C4DFF]" />
+             </div>
+             <button className="bg-[#1E1E1E] text-white px-8 py-3 rounded-xl font-medium hover:bg-black transition-colors">
+                Search Jobs
+             </button>
+          </div>
+
+          <div className="space-y-4 mb-16">
+            {[
+              { title: 'Senior Automotive Technician', loc: 'Munich, Germany', type: 'Full-time' },
+              { title: 'Industrial Welder (MIG/TIG)', loc: 'Stuttgart, Germany', type: 'Contract' },
+              { title: 'Registered Nurse', loc: 'Berlin, Germany', type: 'Full-time' },
+              { title: 'Heavy Vehicle Driver', loc: 'Hamburg, Germany', type: 'Full-time' },
+              { title: 'Construction Site Supervisor', loc: 'Frankfurt, Germany', type: 'Full-time' }
+            ].map((job, index) => (
+              <div key={index} className="group bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+                <div className="absolute left-0 top-0 w-1 h-full bg-[#1E1E1E] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#5C4DFF] transition-colors">{job.title}</h3>
+                    <div className="flex items-center gap-6 text-sm text-gray-500">
+                      <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> {job.loc}</span>
+                      <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {job.type}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-[#5C4DFF] font-medium opacity-0 transform translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    Apply Now <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Section */}
+          <div className="bg-[#1E1E1E] rounded-3xl p-12 text-center text-white relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
+            <div className="relative z-10">
+              <h2 className="text-3xl font-bold mb-4">Don't see the right role?</h2>
+              <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+                Submit your CV to our talent pool and we'll contact you when a suitable position opens up.
+              </p>
+              <Link href="/candidates/contact" className="inline-flex items-center bg-white text-[#1E1E1E] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
+                Submit General Application <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  );
+}

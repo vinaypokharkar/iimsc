@@ -1,9 +1,22 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
+  const pathname = usePathname();
+  const isCandidatePage = pathname?.startsWith('/candidates');
+  const isEmployerPage = pathname?.startsWith('/employers');
+  const isRootPage = pathname === '/';
+
+  if (isRootPage) return null;
+
+  const aboutLink = isEmployerPage ? "/employers/aboutus" : "/candidates/aboutus";
+  const contactLink = isCandidatePage ? "/candidates/contact" : "/contact"; // Fallback to global contact or candidate contact
+
   return (
     <footer className="pt-20 pb-0 relative overflow-hidden border-t border-gray-100">
       
@@ -35,10 +48,10 @@ const Footer = () => {
           <div>
             <h3 className="text-base font-bold text-black mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><Link href="/about" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">About Us</Link></li>
+              <li><Link href={aboutLink} className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">About Us</Link></li>
               <li><Link href="/process" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Our Process</Link></li>
               <li><Link href="/success-stories" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Success Stories</Link></li>
-              <li><Link href="/contact" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Contact Us</Link></li>
+              <li><Link href={contactLink} className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Contact Us</Link></li>
               <li><Link href="/terms" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Terms and Services</Link></li>
               <li><Link href="/privacy" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Privacy Policy</Link></li>
             </ul>
@@ -48,10 +61,20 @@ const Footer = () => {
           <div>
             <h3 className="text-base font-bold text-black mb-6">Services</h3>
             <ul className="space-y-3">
-              <li><Link href="/jobs" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Automotive Jobs</Link></li>
-              <li><Link href="/relocation" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Relocation Support</Link></li>
-              <li><Link href="/visa-guidance" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Visa Guidance</Link></li>
-              <li><Link href="/family-assistance" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Family Assistance</Link></li>
+              {isEmployerPage ? (
+                 <>
+                  <li><Link href="/employers/automotive-hiring" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Automotive Hiring</Link></li>
+                  <li><Link href="/employers/it-hiring" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">IT Hiring</Link></li>
+                  <li><Link href="/employers/skilled-worker-hiring" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Skilled Workers</Link></li>
+                 </>
+              ) : (
+                <>
+                  <li><Link href="/candidates/jobs" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Browse Jobs</Link></li>
+                  <li><Link href="/candidates/services" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Visa & Immigration</Link></li>
+                  <li><Link href="/candidates/services" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Relocation Support</Link></li>
+                  <li><Link href="/candidates/testimonials" className="text-gray-700 hover:text-[#5C4DFF] text-sm transition-colors">Candidate Stories</Link></li>
+                </>
+              )}
             </ul>
           </div>
 

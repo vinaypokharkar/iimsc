@@ -34,7 +34,7 @@ const Hero = () => {
               </span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-bold text-black leading-[1.05] tracking-tight">
+            <h1 className="text-6xl md:text-8xl font-bold --font-instrumental-sans text-black leading-[1.05] tracking-tight">
               Talent{' '}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent italic pr-2">
