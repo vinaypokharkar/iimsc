@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import { Instrument_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
+import { ReactNode } from "react";
 
 const instrumentalSans = Instrument_Sans({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -32,11 +33,27 @@ export default function RootLayout({
         <div className="fixed inset-0 bg-gradient-to-br from-[#5C4DFF]/5 via-white to-[#33348D]/5 z-0 pointer-events-none"></div>
         
         <div className="relative z-10">
-          <Navbar />
+          <ConditionalNavbar />
           {children}
-          <Footer />
+          <ConditionalFooter />
         </div>
       </body>
     </html>
+  );
+}
+
+function ConditionalNavbar() {
+  return (
+    <div className="navbar-container">
+      <Navbar />
+    </div>
+  );
+}
+
+function ConditionalFooter() {
+  return (
+    <div className="footer-container">
+      <Footer />
+    </div>
   );
 }
