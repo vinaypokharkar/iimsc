@@ -63,7 +63,7 @@ export default function LandingPage() {
   >(null);
 
   return (
-    <main className="font-sans text-gray-900 selection:bg-blue-100 overflow-x-hidden">
+    <main className="font-instrumental text-gray-900 selection:bg-blue-100 overflow-x-hidden">
       <div style={{
         minHeight: '100vh',
         margin: '10px',
@@ -78,7 +78,7 @@ export default function LandingPage() {
         <div className="flex items-center gap-2">
           
           <Image 
-            src="/iimsc-logo.jpg"
+            src="/iimsc-logo-removedbg.png"
             alt="IIMSC Logo"
             width={100}
             height={100}
@@ -144,16 +144,16 @@ export default function LandingPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           className="max-w-4xl mx-auto space-y-6 mb-12 md:mb-16 z-20 mt-4 md:mt-0"
-          style={{ position: 'absolute', left: '25%',right: '25%', top: 'calc(50% - 150px)', transform: 'translateX(-50%)' }}
+          style={{ position: 'absolute', left: '25%',right: '25%', top: 'calc(50% - 180px)', transform: 'translateX(-50%)' }}
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900">
+          <h1 className="text-[50px] md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900">
             Your Gateway to Global <br className="hidden md:block" />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500">
               Automotive Opportunities
             </span>
           </h1>
 
-          <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-w-4xl mx-auto">
+          <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-w-4xl mx-auto text-[20px] font-medium">
             From a nation of 1.45 billion, we’re proud to represent India’s powerhouse of nearly 29 million talents
             from the Indian Automotive Industry, ready to drive Europe’s automotive industry into the future.
           </p>
@@ -163,7 +163,7 @@ export default function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="text-sm font-bold text-gray-900 mb-6 uppercase tracking-wide"
+          className="text-sm font-bold text-gray-900 mb-6 uppercase tracking-wide text-5xl"
         >
           Choose the path that matches your goals.
         </motion.p>
@@ -175,7 +175,7 @@ export default function LandingPage() {
         >
           <div className="relative w-[95%] max-w-5xl h-[120px] md:h-[200px]">
             {/* Candidate Card - Left */}
-              <div className={`absolute left-0 top-1/2 -translate-y-1/2 ${hoveredRole === 'candidate' ? 'z-50 md:z-50' : 'z-10 md:z-10'}`}>
+              <div className={`absolute left-0 top-1/2 -translate-y-1/2 ${hoveredRole === 'candidate' ? 'z-0 md:z-0' : 'z-0 md:z-0'}`}>
               <Card
                 role="candidate"
                 className="rotate-0"
@@ -194,7 +194,7 @@ export default function LandingPage() {
             </div>
 
             {/* Employer Card - Right (Overlapping) */}
-              <div className={`absolute right-10 top-1/2 -translate-y-1/2 ${hoveredRole === 'employer' ? 'z-50 md:z-50' : 'z-10 md:z-10'} md:left-[35%]`}>
+              <div className={`absolute right-10 top-1/2 -translate-y-1/2 ${hoveredRole === 'employer' ? 'z-50 md:z-50' : 'z-40 md:z-40'} md:left-[55%]`}>
               <Card
                 role="employer"
                 isActive={hoveredRole === "employer"}
@@ -290,7 +290,7 @@ function Card({
       onMouseEnter={onHover}
       whileHover={{
         y: -22,
-        scale: 1.032,
+        scaleY: 1.05,
         rotate: isActive ? 0 : -0.6,
         boxShadow: isActive
           ? "0 32px 70px rgba(2,6,23,0.45)"
@@ -323,7 +323,7 @@ function Card({
         {/* Title Row */}
         <motion.div
           layout="position"
-          className={`text-lg md:text-xl font-bold flex items-center justify-between w-full ${
+          className={`text-lg md:text-xl font-bold flex items-center justify-between w-full text-left ${
             isActive ? "mb-4 items-start" : "items-center"
           }`}
         >
@@ -336,7 +336,7 @@ function Card({
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
-              className={`p-2 rounded-full ${
+              className={`p-2 rounded-full shrink-0 ${
                 isDark ? "bg-white text-black" : "bg-black text-white"
               }`}
             >
@@ -356,7 +356,7 @@ function Card({
               className="flex flex-col gap-4"
             >
               <p
-                className={`text-sm md:text-base leading-relaxed max-w-[85%] ${
+                className={`text-sm md:text-base leading-relaxed max-w-[85%] text-left ${
                   isDark ? "text-gray-400" : "text-gray-600"
                 }`}
               >
@@ -365,7 +365,7 @@ function Card({
 
               <div className="mt-auto pt-2">
                 <p
-                  className={`text-lg font-bold flex items-center gap-2 ${
+                  className={`text-lg font-bold flex items-center gap-2 text-left ${
                     isDark ? "text-blue-300" : "text-blue-700"
                   }`}
                 >

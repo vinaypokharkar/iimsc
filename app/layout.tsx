@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${instrumentalSans.variable} ${playfairDisplay.variable} font-instrumental-sans antialiased bg-white relative min-h-screen`}>
+      <body className={`${instrumentalSans.variable} ${playfairDisplay.variable} antialiased bg-white relative min-h-screen`}>
         {/* Global Background */}
         <div className="fixed inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
         <div className="fixed inset-0 bg-gradient-to-br from-[#5C4DFF]/5 via-white to-[#33348D]/5 z-0 pointer-events-none"></div>
