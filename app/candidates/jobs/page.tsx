@@ -1,10 +1,27 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Clock, ArrowRight, Search } from 'lucide-react';
+import JobApplicationModal from '@/components/job-application-modal';
 
 export default function CandidateJobs() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState('');
+
+  const openModal = (jobTitle: string) => {
+    setSelectedJob(jobTitle);
+    setIsModalOpen(true);
+  };
+
   return (
     <main className="min-h-screen pt-24 pb-12 relative overflow-hidden font-instrumental-sans">
+      <JobApplicationModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        jobTitle={selectedJob} 
+      />
+
       {/* Global Background Elements */}
       <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#1E1E1E]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
@@ -40,7 +57,11 @@ export default function CandidateJobs() {
               { title: 'Heavy Vehicle Driver', loc: 'Hamburg, Germany', type: 'Full-time' },
               { title: 'Construction Site Supervisor', loc: 'Frankfurt, Germany', type: 'Full-time' }
             ].map((job, index) => (
-              <div key={index} className="group bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+              <div 
+                key={index} 
+                onClick={() => openModal(job.title)}
+                className="group bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden"
+              >
                 <div className="absolute left-0 top-0 w-1 h-full bg-[#1E1E1E] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
@@ -66,9 +87,12 @@ export default function CandidateJobs() {
               <p className="text-gray-400 mb-8 max-w-xl mx-auto">
                 Submit your CV to our talent pool and we'll contact you when a suitable position opens up.
               </p>
-              <Link href="/candidates/contact" className="inline-flex items-center bg-white text-[#1E1E1E] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
+              <button 
+                onClick={() => openModal('General Application')}
+                className="inline-flex items-center bg-white text-[#1E1E1E] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
+              >
                 Submit General Application <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              </button>
             </div>
           </div>
 
