@@ -11,48 +11,48 @@ import Image from "next/image";
 // rotate: tilts the image to point towards the center
 // y: pushes the side images down to create the curve
 const HERO_IMAGES = [
-  {
-    src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80",
-    rotate: -15,
-    y: 120, // Lowest (Far Left)
-    delay: 0,
+  { 
+    src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80", 
+    rotate: -20, 
+    y: 180,  // Lower for outer edges
+    delay: 0 
   },
-  {
-    src: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80",
-    rotate: -10,
-    y: 50, // Mid (Left)
-    delay: 0.1,
+  { 
+    src: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80", 
+    rotate: -25, 
+    y: 80, 
+    delay: 0.1 
   },
-  {
-    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80",
-    rotate: -5,
-    y: 20, // Inner (Left)
-    delay: 0.2,
+  { 
+    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80", 
+    rotate: -15, 
+    y: -10, 
+    delay: 0.2 
+  }, 
+  { 
+    src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80", 
+    rotate: 0, 
+    y: -60  ,    // Center is highest
+    delay: 0.3 
+  },   
+  { 
+    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80", 
+    rotate: 15, 
+    y: -10, 
+    delay: 0.4 
   },
-  {
-    src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80",
-    rotate: 0,
-    y: 0, // Highest (Center)
-    delay: 0.3,
+  { 
+    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80", 
+    rotate: 25, 
+    y: 80, 
+    delay: 0.5 
   },
-  {
-    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80",
-    rotate: 5,
-    y: 20, // Inner (Right)
-    delay: 0.4,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80",
-    rotate: 10,
-    y: 50, // Mid (Right)
-    delay: 0.5,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1574462811041-52939d9ee192?auto=format&fit=crop&w=400&q=80",
-    rotate: 15,
-    y: 90, // Lowest (Far Right)
-    delay: 0.6,
-  },
+  { 
+    src: "https://images.unsplash.com/photo-1574462811041-52939d9ee192?auto=format&fit=crop&w=400&q=80", 
+    rotate: 20, 
+    y: 180, 
+    delay: 0.6 
+  }, 
 ];
 
 export default function LandingPage() {
@@ -65,12 +65,13 @@ export default function LandingPage() {
       {/* --- Navbar --- */}
       <nav className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold italic text-xs ">
-            IIMSC
-          </div>
-          <span className="font-bold text-blue-900 text-xl tracking-tight hidden sm:block">
-            IIMSC Co
-          </span>
+          
+          <Image 
+            src="/iimsc-logo.jpg"
+            alt="IIMSC Logo"
+            width={100}
+            height={100}
+          />
         </div>
 
         <div className="flex items-center gap-4 md:gap-6">
@@ -87,43 +88,43 @@ export default function LandingPage() {
       {/* --- Hero Section --- */}
       <section className="relative w-full max-w-7x2 mx-auto px-4 pt-10 pb-20 flex flex-col items-center text-center z-10">
         {/* 
+{/* 
            --- Semicircular Image Arc --- 
-           We use a flex container with negative margins on mobile (to fit) 
-           and wide gaps on desktop to create the spacious arc look.
+           Logic: The parent is width 100% and hidden overflow.
+           The child is WIDER than 100% (e.g. 120%) and centered. 
+           This pushes the first and last items off-screen.
         */}
-        <div className="relative w-full flex justify-center mb-8 md:mb-2">
-          {/* Container for the arc */}
-          <div className="flex items-start justify-center gap-10 md:gap-6 lg:gap-8 pt-10 h-[400px] md:h-[300px]">
-  {HERO_IMAGES.map((img, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 100, scale: 0.8 }}
-      animate={{ opacity: 1, y: img.y, scale: 1 }}
-      transition={{ 
-        duration: 0.8, 
-        delay: img.delay, 
-        ease: [0.22, 1, 0.36, 1] 
-      }}
-      style={{ 
-        rotate: img.rotate,
-      }}
-      className="relative group"
-    >
-      {/* UPDATED: Added rounded-3xl for heavy rounded corners on squares */}
-      <div className="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border-4 border-white shadow-2xl transition-transform duration-300 hover:scale-105 hover:-translate-y-2 bg-gray-200">
-        <Image 
-          src={img.src} 
-          alt="Worker Profile" 
-          fill 
-          className="object-cover"
-          sizes="(max-width: 768px) 100px, 200px"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-      </div>
-    </motion.div>
-  ))}
-</div>
+        <div className="relative w-full flex justify-center mb-12 md:mb-10 overflow-hidden py-4">
+          <div className="flex items-start justify-between w-[200%] sm:w-[160%] md:w-[125%] lg:w-[115%] px-4 pt-12 h-[220px] md:h-[400px]">
+            {HERO_IMAGES.map((img, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 150, scale: 0.8 }}
+                animate={{ opacity: 1, y: img.y, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: img.delay, 
+                  ease: [0.22, 1, 0.36, 1] 
+                }}
+                style={{ 
+                  rotate: img.rotate,
+                }}
+                className="relative group shrink-0" // shrink-0 prevents squishing
+              >
+                {/* Image Card: Square + Rounded-3xl */}
+                <div className="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border-4 border-white shadow-2xl transition-transform duration-300 hover:scale-110 hover:-translate-y-2 bg-gray-200">
+                  <Image 
+                    src={img.src} 
+                    alt="Worker Profile" 
+                    fill 
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100px, 200px"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Text Content */}
