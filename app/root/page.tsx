@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoveRight, Globe } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import Footer from "@/components/footer";
 
 // --- Types & Data ---
 
@@ -13,8 +15,8 @@ import Image from "next/image";
 const HERO_IMAGES = [
   { 
     src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80", 
-    rotate: -20, 
-    y: 180,  // Lower for outer edges
+    rotate: -25, 
+    y: 200,  // Lower for outer edges
     delay: 0 
   },
   { 
@@ -49,8 +51,8 @@ const HERO_IMAGES = [
   },
   { 
     src: "https://images.unsplash.com/photo-1574462811041-52939d9ee192?auto=format&fit=crop&w=400&q=80", 
-    rotate: 20, 
-    y: 180, 
+    rotate: 25, 
+    y: 200, 
     delay: 0.6 
   }, 
 ];
@@ -61,8 +63,17 @@ export default function LandingPage() {
   >(null);
 
   return (
-    <main className="min-h-screen bg-gray-50 font-sans text-gray-900 selection:bg-blue-100 overflow-x-hidden ">
-      {/* --- Navbar --- */}
+    <main className="font-sans text-gray-900 selection:bg-blue-100 overflow-x-hidden">
+      <div style={{
+        minHeight: '100vh',
+        margin: '10px',
+        backgroundImage: 'url(/Rectangle-711.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        borderRadius: '0.75rem',
+      }}>
+        {/* --- Navbar --- */}
       <nav className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6 flex justify-between items-center relative z-50">
         <div className="flex items-center gap-2">
           
@@ -86,7 +97,7 @@ export default function LandingPage() {
       </nav>
 
       {/* --- Hero Section --- */}
-      <section className="relative w-full max-w-7x2 mx-auto px-4 pt-10 pb-20 flex flex-col items-center text-center z-10">
+      <section className="relative w-full max-w-7x2 mx-auto px-4 pt-10 pb-20 flex flex-col items-center text-center z-10 bg-transparent">
         {/* 
 {/* 
            --- Semicircular Image Arc --- 
@@ -95,7 +106,7 @@ export default function LandingPage() {
            This pushes the first and last items off-screen.
         */}
         <div className="relative w-full flex justify-center mb-12 md:mb-10 overflow-hidden py-4">
-          <div className="flex items-start justify-between w-[200%] sm:w-[160%] md:w-[125%] lg:w-[115%] px-4 pt-12 h-[220px] md:h-[400px]">
+          <div className="flex items-start justify-between w-[200%] sm:w-[160%] md:w-[125%] lg:w-[115%] px-4 pt-12 h-[220px] md:h-[450px]">
             {HERO_IMAGES.map((img, index) => (
               <motion.div
                 key={index}
@@ -112,15 +123,15 @@ export default function LandingPage() {
                 className="relative group shrink-0" // shrink-0 prevents squishing
               >
                 {/* Image Card: Square + Rounded-3xl */}
-                <div className="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border-4 border-white shadow-2xl transition-transform duration-300 hover:scale-110 hover:-translate-y-2 bg-gray-200">
+                <div className="relative w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 overflow-hidden border-4 border-white shadow-2xl transition-transform duration-300 bg-gray-200 rounded-xl">
                   <Image 
                     src={img.src} 
                     alt="Worker Profile" 
                     fill 
-                    className="object-cover"
+                    className="object-cover w-full h-full rounded-xl"
                     sizes="(max-width: 768px) 100px, 200px"
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 rounded-xl" />
                 </div>
               </motion.div>
             ))}
@@ -132,7 +143,8 @@ export default function LandingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="max-w-4xl mx-auto space-y-6 mb-12 md:mb-16 relative z-20 mt-4 md:mt-0"
+          className="max-w-4xl mx-auto space-y-6 mb-12 md:mb-16 z-20 mt-4 md:mt-0"
+          style={{ position: 'absolute', left: '25%',right: '25%', top: 'calc(50% - 150px)', transform: 'translateX(-50%)' }}
         >
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900">
             Your Gateway to Global <br className="hidden md:block" />
@@ -141,11 +153,9 @@ export default function LandingPage() {
             </span>
           </h1>
 
-          <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto">
-            From a nation of 1.45 billion, we're proud to represent India's
-            powerhouse of nearly 29 million talents from the Indian Automotive
-            Industry, ready to drive Europe's automotive industry into the
-            future.
+          <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-w-4xl mx-auto">
+            From a nation of 1.45 billion, we’re proud to represent India’s powerhouse of nearly 29 million talents
+            from the Indian Automotive Industry, ready to drive Europe’s automotive industry into the future.
           </p>
         </motion.div>
 
@@ -158,48 +168,58 @@ export default function LandingPage() {
           Choose the path that matches your goals.
         </motion.p>
 
-        {/* --- Interactive Role Selection --- */}
+        {/* --- Interactive Role Selection (Overlapping Cards) --- */}
         <div
-          className="flex flex-col md:flex-row items-center justify-center gap-4 w-full h-auto md:h-[240px]"
+          className="relative w-full flex items-center justify-center py-12"
           onMouseLeave={() => setHoveredRole(null)}
         >
-          {/* Candidate Card */}
-          <Card
-            role="candidate"
-            isActive={hoveredRole === "candidate"}
-            isInactive={hoveredRole === "employer"}
-            onHover={() => setHoveredRole("candidate")}
-            defaultTitle="For Candidates"
-            expandedContent={{
-              title: "For Candidates",
-              subtitle:
-                "We help skilled professionals move from India to Europe with full support at every step.",
-              cta: "Find Your Dream Career",
-              theme: "light",
-            }}
-          />
+          <div className="relative w-[95%] max-w-5xl h-[120px] md:h-[200px]">
+            {/* Candidate Card - Left */}
+              <div className={`absolute left-0 top-1/2 -translate-y-1/2 ${hoveredRole === 'candidate' ? 'z-50 md:z-50' : 'z-10 md:z-10'}`}>
+              <Card
+                role="candidate"
+                className="rotate-0"
+                isActive={hoveredRole === "candidate"}
+                isInactive={hoveredRole === "employer"}
+                onHover={() => setHoveredRole("candidate")}
+                defaultTitle="For Candidates"
+                expandedContent={{
+                  title: "For Candidates",
+                  subtitle:
+                    "We help skilled professionals move from India to Europe with full support at every step.",
+                  cta: "Find Your Dream Career",
+                  theme: "light",
+                }}
+              />
+            </div>
 
-          {/* Employer Card */}
-          <Card
-            role="employer"
-            isActive={hoveredRole === "employer"}
-            isInactive={hoveredRole === "candidate"}
-            onHover={() => setHoveredRole("employer")}
-            defaultTitle="For Employers"
-            expandedContent={{
-              title: "For Employers",
-              subtitle:
-                "Hire skilled automotive professionals from India with fast, reliable, end-to-end recruitment support.",
-              cta: "Hire Top-Tier Talent",
-              theme: "dark",
-            }}
-          />
+            {/* Employer Card - Right (Overlapping) */}
+              <div className={`absolute right-10 top-1/2 -translate-y-1/2 ${hoveredRole === 'employer' ? 'z-50 md:z-50' : 'z-10 md:z-10'} md:left-[35%]`}>
+              <Card
+                role="employer"
+                isActive={hoveredRole === "employer"}
+                isInactive={hoveredRole === "candidate"}
+                onHover={() => setHoveredRole("employer")}
+                defaultTitle="For Employers"
+                expandedContent={{
+                  title: "For Employers",
+                  subtitle:
+                    "Hire skilled automotive professionals from India with fast, reliable, end-to-end recruitment support.",
+                  cta: "Hire Top-Tier Talent",
+                  theme: "dark",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Background Elements */}
-      <div className="fixed top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-blue-50/50 to-transparent -z-10 pointer-events-none" />
-      <div className="fixed bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-100 to-transparent -z-10 pointer-events-none" />
+      {/* Removed to show background image */}
+      </div>
+      
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
@@ -212,6 +232,16 @@ interface CardProps {
   isInactive: boolean;
   onHover: () => void;
   defaultTitle: string;
+  className?: string;
+  dimensions?: {
+    activeWidth?: number;
+    defaultWidth?: number;
+    shrunkWidth?: number;
+    activeHeight?: number;
+    defaultHeight?: number;
+    activeBorderRadius?: number;
+    defaultBorderRadius?: number;
+  };
   expandedContent: {
     title: string;
     subtitle: string;
@@ -225,9 +255,22 @@ function Card({
   isInactive,
   onHover,
   defaultTitle,
+  className,
+  dimensions,
   expandedContent,
 }: CardProps) {
   const isDark = expandedContent.theme === "dark";
+
+  // Default dimensions - CUSTOMIZE THESE VALUES
+  const dims = {
+    activeWidth: dimensions?.activeWidth || 600,
+    defaultWidth: dimensions?.defaultWidth || 600,
+    shrunkWidth: dimensions?.shrunkWidth || 200,
+    activeHeight: dimensions?.activeHeight || 280,
+    defaultHeight: dimensions?.defaultHeight || 180,
+    activeBorderRadius: dimensions?.activeBorderRadius || 28,
+    defaultBorderRadius: dimensions?.defaultBorderRadius || 40,
+  };
 
   // Styles
   const baseClasses =
@@ -245,18 +288,31 @@ function Card({
     <motion.div
       layout
       onMouseEnter={onHover}
-      className={`${baseClasses} ${themeClasses}`}
+      whileHover={{
+        y: -22,
+        scale: 1.032,
+        rotate: isActive ? 0 : -0.6,
+        boxShadow: isActive
+          ? "0 32px 70px rgba(2,6,23,0.45)"
+          : "0 20px 40px rgba(2,6,23,0.20)",
+      }}
+      whileTap={{ scale: 0.995 }}
+      className={`${baseClasses} ${themeClasses} ${className || ""}`}
       initial={false}
       animate={{
-        // Desktop sizes
-        width: isActive ? 600 : isInactive ? 220 : 260,
-        height: isActive ? 240 : 70,
-        borderRadius: isActive ? 24 : 35,
+        // Desktop sizes - now customizable
+        // IMPORTANT: only the active (hovered) card changes size.
+        // Non-active cards remain at `defaultWidth/defaultHeight` so
+        // hovering one card does NOT alter the other's dimensions.
+        width: isActive ? dims.activeWidth : dims.defaultWidth,
+        height: isActive ? dims.activeHeight : dims.defaultHeight,
+        borderRadius: isActive ? dims.activeBorderRadius : dims.defaultBorderRadius,
+        boxShadow: isActive ? "0 20px 48px rgba(2,6,23,0.14)" : "0 8px 18px rgba(2,6,23,0.06)",
       }}
       transition={{
         type: "spring",
-        stiffness: 180,
-        damping: 24,
+        stiffness: 260,
+        damping: 22,
         mass: 1,
       }}
       // Mobile override via style prop for simple responsiveness if strictly needed,
