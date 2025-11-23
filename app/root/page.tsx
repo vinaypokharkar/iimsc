@@ -178,6 +178,7 @@ export default function LandingPage() {
               <div className={`absolute left-0 top-1/2 -translate-y-1/2 ${hoveredRole === 'candidate' ? 'z-0 md:z-0' : 'z-0 md:z-0'}`}>
               <Card
                 role="candidate"
+                imageSrc="/candidates.png"
                 className="rotate-0"
                 isActive={hoveredRole === "candidate"}
                 isInactive={hoveredRole === "employer"}
@@ -197,6 +198,7 @@ export default function LandingPage() {
               <div className={`absolute right-10 top-1/2 -translate-y-1/2 ${hoveredRole === 'employer' ? 'z-50 md:z-50' : 'z-40 md:z-40'} md:left-[55%]`}>
               <Card
                 role="employer"
+                imageSrc="/employers.png"
                 isActive={hoveredRole === "employer"}
                 isInactive={hoveredRole === "candidate"}
                 onHover={() => setHoveredRole("employer")}
@@ -232,6 +234,7 @@ interface CardProps {
   isInactive: boolean;
   onHover: () => void;
   defaultTitle: string;
+  imageSrc: string;
   className?: string;
   dimensions?: {
     activeWidth?: number;
@@ -255,6 +258,7 @@ function Card({
   isInactive,
   onHover,
   defaultTitle,
+  imageSrc,
   className,
   dimensions,
   expandedContent,
@@ -319,7 +323,21 @@ function Card({
       // though typically layout animations are best left to Framer Motion entirely.
       // We use CSS classes to handle the stacking on mobile naturally.
     >
-      <div className="relative w-full h-full p-6 md:p-10 flex flex-col justify-center">
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0.2 }}
+        animate={{ opacity: isActive ? 1 : 0.2 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Image
+          src={imageSrc}
+          alt={defaultTitle}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </motion.div>
+      <div className="relative z-10 w-full h-full p-6 md:p-10 flex flex-col justify-center">
         {/* Title Row */}
         <motion.div
           layout="position"
