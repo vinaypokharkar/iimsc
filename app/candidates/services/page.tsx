@@ -1,64 +1,129 @@
-import React from 'react';
-import Link from 'next/link';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { CheckCircle, ArrowRight } from "lucide-react";
+import CTASection from "@/components/CTASection";
+
+const SERVICES = [
+  {
+    title: "Visa Application Support",
+    image:"/visa-application-support.png", // Passport/Visa image
+    isPrimary: true, // This card has the purple tint
+  },
+  {
+    title: "Relocation Assistance",
+    image:
+      "/relocation-assistance.png", // Apartment/Moving
+  },
+  {
+    title: "Language Training",
+    image:
+      "/language-training.png", // Books/Learning
+  },
+  {
+    title: "Cultural Integration",
+    image:
+      "/cultural-integration.png", // Temple/Culture
+  },
+  {
+    title: "Family Support",
+    image:
+      "/family-support.png", // Family hands
+  },
+  {
+    title: "Post-Arrival Guidance",
+    image:
+      "/post-arrival-guidance.png", // Meeting/Guidance
+  },
+];
 
 export default function CandidateServices() {
   return (
-    <main className="min-h-screen pt-24 pb-12 relative overflow-hidden font-instrumental-sans">
-      {/* Global Background Elements */}
-      <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#33348D]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#5C4DFF]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 z-0"></div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-medium text-black tracking-tight mb-6">
-              Comprehensive <span className="text-[#33348D] italic">Support</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-              We go beyond recruitment. Our end-to-end services ensure you are fully prepared for your new life in Europe.
-            </p>
-          </div>
-          
-          <div className="bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-gray-100 shadow-sm mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-              {[
-                { title: 'Visa Application Support', desc: 'Expert guidance through the complex visa and work permit process.' },
-                { title: 'Relocation Assistance', desc: 'Help with flights, accommodation, and initial settlement.' },
-                { title: 'Language Training', desc: 'Resources and courses to help you master the local language.' },
-                { title: 'Cultural Integration', desc: 'Workshops to help you adapt to the European work culture and lifestyle.' },
-                { title: 'Family Support', desc: 'Guidance on bringing your family members to join you.' },
-                { title: 'Post-Arrival Guidance', desc: 'Ongoing support even after you land, including banking and registration.' }
-              ].map((service, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                  <div className="mt-1 bg-[#33348D]/10 p-2 rounded-lg">
-                    <CheckCircle className="w-6 h-6 text-[#33348D]" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-black mb-1">{service.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{service.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="bg-[#33348D] rounded-3xl p-12 text-center text-white relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">Need help with something specific?</h2>
-              <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                Our team is here to answer all your questions about working and living in Europe.
-              </p>
-              <Link href="/candidates/contact" className="inline-flex items-center bg-white text-[#33348D] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
-                Get in Touch <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-
+    <main className="min-h-screen bg-gray-100 font-instrumental text-gray-900">
+      {/* --- 1. HERO SECTION --- */}
+      <section className="relative w-full h-[250px] md:h-[350px]">
+        {/* Background Image */}
+        {/* REPLACE src with your actual top image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/services-bg.png"
+            alt="Construction workers"
+            fill
+            className="object-cover object-top"
+            priority
+          />
+          {/* subtle overlay to ensure text contrast if needed */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-200/20 to-transparent mix-blend-overlay" />
         </div>
+
+        {/* "SERVICES" Huge Text Overlay */}
+        <div className="absolute top-10 left-0 w-full flex justify-start z-10 pointer-events-none ms-25">
+          <h1 className="text-[12vw] md:text-[150px] font-bold text-white tracking-widest leading-none select-none mix-blend-overlay font-bold tracking-tight">
+            SERVICES
+          </h1>
+        </div>
+      </section>
+
+      <div className="max-w-8xl mx-auto px-4 space-y-12 mt-10 relative z-20">
+        <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm flex flex-col md:flex-row min-h-[400px] w-11/12 mx-auto">
+          {/* Text Side */}
+          <div className="flex-1 p-10 md:p-16 flex flex-col justify-center">
+            <span className="text-gray-500 font-semibold uppercase tracking-wider text-4xl mb-6">
+              COMPREHENSIVE SUPPORT
+            </span>
+            <h3 className="text-xl md:text-4xl font-bold bg-gradient-to-b from-[#5C4DFF] to-[#cccccc] text-transparent bg-clip-text leading-snug">
+              We go beyond recruitment. Our end-to-end services ensure you are
+              fully prepared for your new life in Europe.
+            </h3>
+          </div>
+
+          {/* Image Side */}
+          {/* REPLACE src with your abstract stripes image */}
+          <div className="flex-1 relative h-64 md:h-auto opacity-100">
+            <Image src="/hand-bg.png" alt="" fill className="object-cover" />
+          </div>
+        </div>
+
+
+      {/* --- 2. Additional Services Grid --- */}
+      <div>
+        {/* Section Title */}
+        <div className="space-y-4 text-center mb-8">
+         <h3 className="text-center text-gray-500 font-bold uppercase tracking-wider text-4xl space-y-8 mb-6 mt-12">
+            ADDITIONAL SERVICES
+          </h3>
+        </div>
+
+        {/* Grid Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1650px] mx-auto px-4">
+          {SERVICES.map((service, index) => (
+            <div
+              key={index}
+              className="group relative h-36 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer"
+            >
+              {/* Background Image */}
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+
+              {/* Overlays */}
+             
+
+              {/* Text Content */}
+              <div className="absolute bottom-0 left-0 p-6 w-full ">
+                <h4 className="text-white text-3xl font-bold leading-tight drop-shadow-md">
+                  {service.title.split(" ").slice(0, -1).join(" ")} <br />
+                  {service.title.split(" ").slice(-1)}
+                </h4>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <CTASection />
       </div>
     </main>
   );
