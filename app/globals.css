@@ -113,4 +113,10 @@ html, body {
   background: linear-gradient(to bottom, #4A3BE6, #2A2B7A);
 }
 
-
+.text-gradient {
+  background-image: linear-gradient(to right, #33348D, #0E0E27);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
