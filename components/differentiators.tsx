@@ -44,9 +44,9 @@ const Differentiators = () => {
           {differentiators.map((item, index) => (
             <div 
               key={item.number} 
-              className="relative p-8 sm:p-10 md:p-14 rounded-3xl bg-white/80 backdrop-blur-sm overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 h-full min-h-[320px]"
+              className="relative p-8 sm:p-10 md:p-14 rounded-3xl bg-white/80 backdrop-blur-sm overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 h-full min-h-[320px] hover:scale-105 transition-transform duration-300"
             >
-              <div className="relative z-10 flex flex-col h-full justify-between gap-8">
+              <div className="relative z-10 flex flex-col h-full justify-between gap-8 ">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4 group-hover:text-[#33348D] transition-colors duration-300">{item.title}</h3>
                   <p className="text-gray-600 text-lg leading-relaxed max-w-xs">{item.description}</p>
@@ -55,7 +55,7 @@ const Differentiators = () => {
               
               {/* Decorative Number */}
               <div className="absolute -right-4 -bottom-16 opacity-100 transition-opacity duration-500 pointer-events-none">
-                <span className="text-[10rem] sm:text-[15rem] font-bold text-[#5C4DFF] leading-none select-none opacity-80">
+                <span className="text-[10rem] sm:text-[15rem] font-bold text-[#5C4DFF] leading-none select-none opacity-80 bg-gradient-to-bl from-[#FFFFFF] via-[#5F61FF] to-[#C5C5C5] bg-clip-text text-transparent">
                   {item.number}
                 </span>
               </div>
