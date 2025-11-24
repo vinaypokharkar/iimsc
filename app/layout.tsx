@@ -32,9 +32,11 @@ export default function RootLayout({
         <div className="fixed inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
         <div className="fixed inset-0 bg-gradient-to-br from-[#5C4DFF]/5 via-white to-[#33348D]/5 z-0 pointer-events-none"></div>
         
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col min-h-screen">
           <ConditionalNavbar />
-          {children}
+          <div className="flex-grow">
+            {children}
+          </div>
           <ConditionalFooter />
         </div>
       </body>

@@ -1,140 +1,164 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Briefcase, UserCheck, MessageSquare, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Stats from '@/components/stats';
 import Differentiators from '@/components/differentiators';
+import { IconAboutUs, IconServices, IconSuccess } from '@/components/service-icons';
 
-const rolesColumn1 = [
-  { image: "https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg", label: "Car Mechanic", category: "Automotive" },
-  { image: "https://images.pexels.com/photos/14908957/pexels-photo-14908957.jpeg", label: "Auto Painter", category: "Automotive" },
-  { image: "https://images.pexels.com/photos/73833/weld-hot-soldering-radio-welder-73833.jpeg", label: "Welder", category: "Automotive" },
-  { image: "https://images.pexels.com/photos/1325725/pexels-photo-1325725.jpeg", label: "Auto Electrician", category: "Automotive" },
-  { image: "https://images.pexels.com/photos/5835591/pexels-photo-5835591.jpeg", label: "Professional Driver", category: "Transport" },
-];
-
-const rolesColumn2 = [
-  { image: "https://images.pexels.com/photos/73833/weld-hot-soldering-radio-welder-73833.jpeg", label: "Industrial Welder", category: "Industrial" },
-  { image: "https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg", label: "Pipe Fitter", category: "Industrial" },
-  { image: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg", label: "Electrician", category: "Industrial" },
-  { image: "https://images.pexels.com/photos/6098057/pexels-photo-6098057.jpeg", label: "Nurse / Caregiver", category: "Healthcare" },
-  { image: "https://images.pexels.com/photos/3769980/pexels-photo-3769980.jpeg", label: "Hotel Staff", category: "Hospitality" },
+const flags = [
+  { src: "https://flagcdn.com/at.svg", alt: "Austria" },
+  { src: "https://flagcdn.com/be.svg", alt: "Belgium" },
+  { src: "https://flagcdn.com/hr.svg", alt: "Croatia" },
+  { src: "https://flagcdn.com/dk.svg", alt: "Denmark" },
+  { src: "https://flagcdn.com/fi.svg", alt: "Finland" },
+  { src: "https://flagcdn.com/de.svg", alt: "Germany" },
+  { src: "https://flagcdn.com/gr.svg", alt: "Greece" },
+  { src: "https://flagcdn.com/hu.svg", alt: "Hungary" },
+  { src: "https://flagcdn.com/is.svg", alt: "Iceland" },
+  { src: "https://flagcdn.com/lu.svg", alt: "Luxembourg" },
+  { src: "https://flagcdn.com/nl.svg", alt: "Netherlands" },
+  { src: "https://flagcdn.com/no.svg", alt: "Norway" },
+  { src: "https://flagcdn.com/pl.svg", alt: "Poland" },
+  { src: "https://flagcdn.com/sk.svg", alt: "Slovakia" },
+  { src: "https://flagcdn.com/si.svg", alt: "Slovenia" },
+  { src: "https://flagcdn.com/se.svg", alt: "Sweden" },
+  { src: "https://flagcdn.com/ch.svg", alt: "Switzerland" },
+  { src: "https://flagcdn.com/rs.svg", alt: "Serbia" },
+  { src: "https://flagcdn.com/ba.svg", alt: "Bosnia and Herzegovina" },
 ];
 
 export default function CandidateHome() {
   return (
-    <main className="min-h-screen pt-24 pb-12 relative overflow-hidden font-instrumental-sans">
-      {/* Global Background Elements */}
-      <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#5C4DFF]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#33348D]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 z-0"></div>
+    <main className="min-h-screen font-instrumental-sans ">
+      
+      {/* --- Hero Section --- */}
+      <section className="relative w-full h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop"
+            alt="Industrial Worker"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/60 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh] mb-20">
-          {/* Left Content */}
-          <div className="text-left">
-            <h1 className="text-5xl md:text-7xl font-display font-medium text-black tracking-tight mb-6 leading-tight">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center">
+          <div className="max-w-3xl pt-20 pb-24 sm:pb-0">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               Build Your Career <br />
-              <span className="text-[#5C4DFF] italic">
-                Across Borders
-              </span>
+              <span className="">Across Borders</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-xl font-light mb-10">
+            <p className="text-lg sm:text-xl text-gray-200 max-w-xl font-light mb-10 leading-relaxed">
               We connect skilled Indian professionals with top European employers. Your journey to a global career starts here.
             </p>
-            <div className="flex gap-4">
-              <Link href="/candidates/jobs" className="px-8 py-4 bg-[#5C4DFF] text-white rounded-full font-medium hover:bg-[#33348D] shadow-lg hover:shadow-[#5C4DFF]/30 transition-all hover:-translate-y-1">
-                View Open Positions
-              </Link>
-            </div>
+            <Link 
+              href="/candidates/jobs" 
+              className="inline-flex items-center px-8 py-4 bg-white text-[#33348D] rounded-full font-semibold hover:bg-gray-100 transition-all hover:scale-105"
+            >
+              View Open Positions
+            </Link>
           </div>
 
-          {/* Right Content - Infinite Scroll Cards */}
-          <div className="relative h-[600px] w-full flex gap-6 overflow-hidden mask-gradient-y">
-            {/* Column 1 - Scrolling Up */}
-            <div className="flex-1 relative">
-               <div className="animate-scroll-up flex flex-col gap-4 absolute top-0 left-0 w-full">
-                  {[...rolesColumn1, ...rolesColumn1, ...rolesColumn1].map((role, i) => (
-                    <div key={i} className="relative h-48 w-full rounded-2xl overflow-hidden">
-                       <Image 
-                           src={role.image} 
-                           alt={role.label}
-                           fill
-                           className="object-cover"
-                       />
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90" />
-                       
-                       <div className="absolute bottom-0 left-0 w-full p-5">
-                          <p className="font-bold text-white text-xl tracking-wide leading-none">{role.label}</p>
-                       </div>
-                    </div>
-                  ))}
-               </div>
-            </div>
-
-            {/* Column 2 - Scrolling Down */}
-            <div className="flex-1 relative mt-12">
-               <div className="animate-scroll-down flex flex-col gap-4 absolute -top-[100%] left-0 w-full">
-                  {[...rolesColumn2, ...rolesColumn2, ...rolesColumn2].map((role, i) => (
-                    <div key={i} className="relative h-48 w-full rounded-2xl overflow-hidden">
-                       <Image 
-                           src={role.image} 
-                           alt={role.label}
-                           fill
-                           className="object-cover"
-                       />
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90" />
-                       
-                       <div className="absolute bottom-0 left-0 w-full p-5">
-                          <p className="font-bold text-white text-xl tracking-wide leading-none">{role.label}</p>
-                       </div>
-                    </div>
-                  ))}
-               </div>
-            </div>
+          {/* Flag Carousel - Bottom Right */}
+          <div className="absolute bottom-8 sm:bottom-12 right-0 w-full md:w-1/2 lg:w-1/3 overflow-hidden mask-gradient-x">
+             <div className="flex gap-4 animate-scroll-left">
+                {[...flags, ...flags, ...flags].map((flag, i) => (
+                  <div key={i} className="relative w-16 h-12 md:w-20 md:h-14 shrink-0 rounded shadow-sm overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Image
+                      src={flag.src}
+                      alt={flag.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+             </div>
           </div>
         </div>
+      </section>
 
-        {/* Quick Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-          <Link href="/candidates/aboutus" className="group p-8 bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="w-12 h-12 bg-[#5C4DFF]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#5C4DFF] transition-colors duration-300">
-              <UserCheck className="w-6 h-6 text-[#5C4DFF] group-hover:text-white transition-colors duration-300" />
-            </div>
-            <h3 className="text-2xl font-medium text-black mb-3">About Us</h3>
-            <p className="text-gray-600 mb-4">Learn about our mission to empower Indian talent globally.</p>
-            <div className="flex items-center text-[#5C4DFF] font-medium">
-              Read More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </Link>
+      {/* --- Navigation Cards --- */}
+      <section className="py-20 mt-6 relative z-20 px-4">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* About Us */}
+            <Link href="/candidates/aboutus" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[429px] mx-auto border border-gray-100 relative overflow-hidden">
+              <div className="flex flex-col h-full justify-between relative z-10">
+                <div>
+                  <h3 className="text-3xl font-medium text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">About Us</h3>
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                    <p className="text-gray-600 text-sm leading-relaxed overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      Learn about our mission to empower Indian talent globally.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-end w-full mt-auto">
+                  <div className="flex items-center text-gray-500 text-sm font-medium group-hover:text-[#5C4DFF] transition-colors duration-300">
+                    Read More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <IconAboutUs className="w-16 h-16 text-gray-300 group-hover:text-[#5C4DFF] transition-colors duration-300" />
+                </div>
+              </div>
+            </Link>
 
-          <Link href="/candidates/services" className="group p-8 bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="w-12 h-12 bg-[#33348D]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#33348D] transition-colors duration-300">
-              <Briefcase className="w-6 h-6 text-[#33348D] group-hover:text-white transition-colors duration-300" />
-            </div>
-            <h3 className="text-2xl font-medium text-black mb-3">Additional Services</h3>
-            <p className="text-gray-600 mb-4">Visa assistance, relocation support, and more.</p>
-            <div className="flex items-center text-[#33348D] font-medium">
-              Explore Services <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </Link>
+            {/* Additional Services */}
+            <Link href="/candidates/services" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[429px] mx-auto border border-gray-100 relative overflow-hidden">
+              <div className="flex flex-col h-full justify-between relative z-10">
+                <div>
+                  <h3 className="text-3xl font-medium text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">Additional Services</h3>
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                    <p className="text-gray-600 text-sm leading-relaxed overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      Visa assistance, relocation support, and more.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-end w-full mt-auto">
+                  <div className="flex items-center text-gray-500 text-sm font-medium group-hover:text-[#5C4DFF] transition-colors duration-300">
+                    Read More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <IconServices className="w-16 h-16 text-gray-300 group-hover:text-[#5C4DFF] transition-colors duration-300" />
+                </div>
+              </div>
+            </Link>
 
-          <Link href="/candidates/testimonials" className="group p-8 bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="w-12 h-12 bg-[#1E1E1E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#1E1E1E] transition-colors duration-300">
-              <Star className="w-6 h-6 text-[#1E1E1E] group-hover:text-white transition-colors duration-300" />
-            </div>
-            <h3 className="text-2xl font-medium text-black mb-3">Success Stories</h3>
-            <p className="text-gray-600 mb-4">Hear from professionals who have successfully relocated.</p>
-            <div className="flex items-center text-[#1E1E1E] font-medium">
-              View Testimonials <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </Link>
+            {/* Success Stories */}
+            <Link href="/candidates/testimonials" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[429px] mx-auto border border-gray-100 relative overflow-hidden">
+              <div className="flex flex-col h-full justify-between relative z-10">
+                <div>
+                  <h3 className="text-3xl font-medium text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">Success Stories</h3>
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                    <p className="text-gray-600 text-sm leading-relaxed overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      Hear from professionals who have successfully relocated.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-end w-full mt-auto">
+                  <div className="flex items-center text-gray-500 text-sm font-medium group-hover:text-[#5C4DFF] transition-colors duration-300">
+                    Read More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <IconSuccess className="w-16 h-16 text-gray-300 group-hover:text-[#5C4DFF] transition-colors duration-300" />
+                </div>
+              </div>
+            </Link>
+
+          </div>
         </div>
-      </div>
+      </section>
       
-      <Stats />
-      <Differentiators />
+      <div className="">
+        <Stats />
+        <Differentiators />
+      </div>
+
     </main>
   );
 }

@@ -12,7 +12,7 @@ const Footer = () => {
   const isEmployerPage = pathname?.startsWith('/employers');
   const isRootPage = pathname === '/';
 
-  if (isRootPage) return null;
+  // if (isRootPage) return null;
 
   const aboutLink = isEmployerPage ? "/employers/aboutus" : "/candidates/aboutus";
   const contactLink = isCandidatePage ? "/candidates/contact" : "/contact"; // Fallback to global contact or candidate contact

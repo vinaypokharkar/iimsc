@@ -25,12 +25,12 @@ const differentiators = [
 
 const Differentiators = () => {
   return (
-    <section className="py-24 sm:py-32 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden">
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl sm:text-6xl font-bold text-black tracking-tight leading-[1.1]">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black tracking-tight leading-[1.1]">
               What Makes IIMSC <br/>
               <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent italic">Different</span>
             </h2>
@@ -44,21 +44,18 @@ const Differentiators = () => {
           {differentiators.map((item, index) => (
             <div 
               key={item.number} 
-              className={`relative p-20 rounded-3xl bg-white/80 backdrop-blur-sm overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 ${index === 0 || index === 3 ? 'md:col-span-2' : ''}`}
+              className="relative p-8 sm:p-10 md:p-14 rounded-3xl bg-white/80 backdrop-blur-sm overflow-hidden group hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 h-full min-h-[320px]"
             >
               <div className="relative z-10 flex flex-col h-full justify-between gap-8">
                 <div>
-                  {/* <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5C4DFF]/10 to-[#33348D]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <span className="text-xl font-bold text-[#5C4DFF]">{item.number}</span>
-                  </div> */}
                   <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4 group-hover:text-[#33348D] transition-colors duration-300">{item.title}</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">{item.description}</p>
+                  <p className="text-gray-600 text-lg leading-relaxed max-w-xs">{item.description}</p>
                 </div>
               </div>
               
               {/* Decorative Number */}
-              <div className="absolute -right-8 -bottom-12 opacity-80 transition-opacity duration-500 pointer-events-none">
-                <span className="text-[15rem] font-bold bg-gradient-to-r from-[#9a9bff] via-[#5f61ff] to-[#c5c5c5] bg-clip-text text-transparent leading-none select-none">
+              <div className="absolute -right-4 -bottom-16 opacity-100 transition-opacity duration-500 pointer-events-none">
+                <span className="text-[10rem] sm:text-[15rem] font-bold text-[#5C4DFF] leading-none select-none opacity-80">
                   {item.number}
                 </span>
               </div>
