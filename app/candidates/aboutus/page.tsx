@@ -68,7 +68,7 @@ export default function AboutUs() {
             <span className="text-gray-500 font-semibold uppercase tracking-wider text-4xl mb-6">
               Our Mission
             </span>
-            <h3 className="text-xl md:text-4xl font-bold bg-gradient-to-b from-[#33348D] to-[#cccccc] text-transparent bg-clip-text leading-snug">
+            <h3 className="text-xl md:text-4xl font-bold bg-gradient-to-b from-[#5C4DFF] to-[#cccccc] text-transparent bg-clip-text leading-snug">
               To empower skilled Indian professionals by connecting them with
               reputable employers in Europe, fostering a global exchange of
               talent and culture.

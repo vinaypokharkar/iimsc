@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Clock, ArrowRight, Search } from 'lucide-react';
 import JobApplicationModal from '@/components/job-application-modal';
+import Image from 'next/image';
 
 export default function CandidateJobs() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,25 +16,46 @@ export default function CandidateJobs() {
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-12 relative overflow-hidden font-instrumental-sans">
+    <main className="min-h-screen  pb-12 relative overflow-hidden font-instrumental-sans">
       <JobApplicationModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         jobTitle={selectedJob} 
       />
 
+      <section className="relative w-full h-[250px] md:h-[350px]">
+              {/* Background Image */}
+              {/* REPLACE src with your actual top image */}
+              <div className="absolute inset-0 w-full h-full">
+                <Image
+                  src="/open-position-bg.png"
+                  alt="Construction workers"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+      
+              {/* "OPEN POSITIONS" Huge Text Overlay */}
+              <div className="absolute top-10 left-0 w-full flex justify-start z-10 pointer-events-none ms-25">
+                <h1 className="text-[12vw] md:text-[150px] font-bold text-white tracking-widest leading-none select-none mix-blend-overlay font-bold tracking-tight">
+                  OPEN <br /> POSITIONS
+                </h1>
+              </div>
+            </section>
+
       {/* Global Background Elements */}
       <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#1E1E1E]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#33348D]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 z-0"></div>
 
+      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-medium text-black tracking-tight mb-6">
-              Open <span className="text-[#1E1E1E] italic">Positions</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+            
+            <p className="text-center text-gray-500 font-bold uppercase tracking-wider text-4xl space-y-8 mb-6 mt-12">
               Explore exciting career opportunities across Europe's leading industries.
             </p>
           </div>
@@ -66,7 +88,7 @@ export default function CandidateJobs() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[#5C4DFF] transition-colors">{job.title}</h3>
-                    <div className="flex items-center gap-6 text-sm text-gray-500">
+                    <div className="flex flex-col gap-1.5 text-sm text-gray-500 mt-2">
                       <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> {job.loc}</span>
                       <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {job.type}</span>
                     </div>
