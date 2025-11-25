@@ -16,6 +16,15 @@ module.exports = {
         'instrumental-sans': ['var(--font-instrumental-sans)', 'sans-serif'],
         'display': ['var(--font-display)', 'serif'],
       },
+      keyframes: {
+        slideDown: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'slide-down': 'slideDown 0.3s ease-out forwards',
+      },
     },
   },
   plugins: [],

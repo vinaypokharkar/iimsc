@@ -18,14 +18,14 @@ const Footer = () => {
   const contactLink = isCandidatePage ? "/candidates/contact" : "/contact"; // Fallback to global contact or candidate contact
 
   return (
-    <footer className="pt-20 pb-0 relative overflow-hidden border-t border-gray-100">
+    <footer className="pt-12 sm:pt-16 lg:pt-20 pb-0 relative overflow-hidden border-t border-gray-100">
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
           {/* Logo and Description */}
-          <div className="md:col-span-1">
-            <Image src="/iimsc-logo.jpg" alt="IIMSC Co" width={145} height={72} className="mb-6" />
-            <p className="text-gray-700 text-sm leading-relaxed mb-6">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <Image src="/iimsc-logo.jpg" alt="IIMSC Co" width={145} height={72} className="mb-6 w-32 sm:w-36" />
+            <p className="text-gray-700 text-sm leading-relaxed mb-6 max-w-sm">
               Connecting skilled automotive professionals from India to Europe's top companies through transparent, ethical, and long-term recruitment support.
             </p>
             <div className="flex space-x-3">

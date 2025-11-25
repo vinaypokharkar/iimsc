@@ -48,7 +48,7 @@ export default function CandidateHome() {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center">
-          <div className="max-w-3xl pt-20 pb-24 sm:pb-0">
+          <div className="max-w-3xl pb-24 sm:pb-0">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               Build Your Career <br />
               <span className="">Across Borders</span>

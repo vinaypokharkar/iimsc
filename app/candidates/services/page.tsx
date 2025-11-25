@@ -39,90 +39,90 @@ const SERVICES = [
 
 export default function CandidateServices() {
   return (
-    <main className="min-h-screen bg-gray-100 font-instrumental text-gray-900">
+    <main className="min-h-screen bg-gray-100 font-instrumental-sans text-gray-900">
       {/* --- 1. HERO SECTION --- */}
-      <section className="relative w-full h-[250px] md:h-[350px]">
+      <section className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px]">
         {/* Background Image */}
-        {/* REPLACE src with your actual top image */}
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="/services-bg.png"
             alt="Construction workers"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
             priority
           />
-          {/* subtle overlay to ensure text contrast if needed */}
+          {/* Overlay for better text contrast */}
           <div className="absolute inset-0 bg-gradient-to-b from-blue-200/20 to-transparent mix-blend-overlay" />
         </div>
 
         {/* "SERVICES" Huge Text Overlay */}
-        <div className="absolute top-10 left-0 w-full flex justify-start z-10 pointer-events-none ms-25">
-          <h1 className="text-[12vw] md:text-[150px] font-bold text-white tracking-widest leading-none select-none mix-blend-overlay font-bold tracking-tight">
-            SERVICES
-          </h1>
+        <div className="absolute inset-0 flex items-center justify-start z-10 pointer-events-none">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[150px] font-bold text-white tracking-wide leading-none select-none">
+              SERVICES
+            </h1>
+          </div>
         </div>
       </section>
 
-      <div className="max-w-8xl mx-auto px-4 space-y-12 mt-10 relative z-20">
-        <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm flex flex-col md:flex-row min-h-[400px] w-11/12 mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12 sm:py-16 lg:py-20 space-y-16 sm:space-y-20 lg:space-y-24">
+        {/* --- Comprehensive Support Section --- */}
+        <section className="bg-white rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-sm flex flex-col lg:flex-row">
           {/* Text Side */}
-          <div className="flex-1 p-10 md:p-16 flex flex-col justify-center">
-            <span className="text-gray-500 font-semibold uppercase tracking-wider text-4xl mb-6">
+          <div className="flex-1 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+            <p className="text-gray-500 font-semibold uppercase tracking-wider text-sm sm:text-base mb-4 sm:mb-6">
               COMPREHENSIVE SUPPORT
-            </span>
-            <h3 className="text-xl md:text-4xl font-bold bg-gradient-to-b from-[#5C4DFF] to-[#cccccc] text-transparent bg-clip-text leading-snug">
+            </p>
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-b from-[#5C4DFF] to-[#cccccc] text-transparent bg-clip-text leading-snug">
               We go beyond recruitment. Our end-to-end services ensure you are
               fully prepared for your new life in Europe.
             </h3>
           </div>
 
           {/* Image Side */}
-          {/* REPLACE src with your abstract stripes image */}
-          <div className="flex-1 relative h-64 md:h-auto opacity-100">
+          <div className="flex-1 relative h-64 sm:h-80 lg:h-auto min-h-[300px] opacity-100">
             <Image src="/hand-bg.png" alt="" fill className="object-cover" />
           </div>
-        </div>
+        </section>
 
 
       {/* --- 2. Additional Services Grid --- */}
-      <div>
+      <section className="space-y-8 sm:space-y-12">
         {/* Section Title */}
-        <div className="space-y-4 text-center mb-8">
-         <h3 className="text-center text-gray-500 font-bold uppercase tracking-wider text-4xl space-y-8 mb-6 mt-12">
+        <div className="text-center">
+         <h3 className="text-center text-gray-500 font-bold uppercase tracking-wider text-sm sm:text-base">
             ADDITIONAL SERVICES
           </h3>
         </div>
 
         {/* Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1650px] mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {SERVICES.map((service, index) => (
             <div
               key={index}
-              className="group relative h-36 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer"
+              className="group relative h-48 sm:h-56 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
               {/* Background Image */}
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
 
-              {/* Overlays */}
-             
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
 
               {/* Text Content */}
-              <div className="absolute bottom-0 left-0 p-6 w-full ">
-                <h4 className="text-white text-3xl font-bold leading-tight drop-shadow-md">
-                  {service.title.split(" ").slice(0, -1).join(" ")} <br />
-                  {service.title.split(" ").slice(-1)}
+              <div className="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
+                <h4 className="text-white text-xl sm:text-2xl font-bold leading-tight drop-shadow-md group-hover:text-[#5C4DFF] transition-colors duration-300">
+                  {service.title}
                 </h4>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
       <CTASection />
       </div>
     </main>

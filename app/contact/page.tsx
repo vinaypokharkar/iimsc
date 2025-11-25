@@ -3,7 +3,7 @@ import ContactForm from '@/components/contact-form';
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-24 pb-12 relative overflow-hidden font-instrumental-sans">
+    <main className="min-h-screen pt-4 pb-12 relative overflow-hidden font-instrumental-sans">
       {/* Global Background Elements */}
       <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
       <div className="absolute top-[-10%] left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-[#5C4DFF]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>

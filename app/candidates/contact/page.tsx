@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Clock, Globe } from 'lucide-react';
 
 export default function CandidateContact() {
   return (
-    <main className="min-h-screen pt-24 pb-12 relative overflow-hidden font-instrumental-sans bg-gray-50">
+    <main className="min-h-screen pt-4 pb-12 relative overflow-hidden font-instrumental-sans bg-gray-50">
       {/* Global Background Elements */}
       <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#5C4DFF]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>

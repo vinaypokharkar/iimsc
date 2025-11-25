@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,81 +12,81 @@ const HERO_COLUMNS = [
     id: 1,
     offset: "translate-y-16 md:translate-y-32",
     images: [
-      { src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-20 md:w-32" },
-      { src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-20 md:w-32", className: "mt-4" }
+      { src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-16 md:w-24 lg:w-32" },
+      { src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-16 md:w-24 lg:w-32", className: "mt-4" }
     ]
   },
   {
     id: 2,
     offset: "translate-y-8 md:translate-y-16",
     images: [
-      { src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-24 md:w-40" }
+      { src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-20 md:w-28 lg:w-40" }
     ]
   },
   {
     id: 3,
     offset: "translate-y-2 md:translate-y-4",
     images: [
-      { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-20 md:w-36" },
-      { src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-20 md:w-36", className: "mt-4" }
+      { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-16 md:w-24 lg:w-36" },
+      { src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-16 md:w-24 lg:w-36", className: "mt-4" }
     ]
   },
   {
     id: 4,
     offset: "-translate-y-4 md:-translate-y-8",
     images: [
-      { src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-24 md:w-44" }
+      { src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-20 md:w-32 lg:w-44" }
     ]
   },
   {
     id: 5,
     offset: "translate-y-6 md:translate-y-12", // Center peak
     images: [
-      { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-28 md:w-48" }
+      { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-24 md:w-36 lg:w-48" }
     ]
   },
   {
     id: 6,
     offset: "-translate-y-4 md:-translate-y-8",
     images: [
-      { src: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-24 md:w-44" }
+      { src: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-20 md:w-32 lg:w-44" }
     ]
   },
   {
     id: 7,
     offset: "translate-y-2 md:translate-y-4",
     images: [
-      { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-20 md:w-36" },
-      { src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-20 md:w-36", className: "mt-4" }
+      { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-16 md:w-24 lg:w-36" },
+      { src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-16 md:w-24 lg:w-36", className: "mt-4" }
     ]
   },
   {
     id: 8,
     offset: "translate-y-8 md:translate-y-16",
     images: [
-      { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-24 md:w-40" }
+      { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[3/4]", width: "w-20 md:w-28 lg:w-40" }
     ]
   },
   {
     id: 9,
     offset: "translate-y-16 md:translate-y-32",
     images: [
-      { src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-20 md:w-32" },
-      { src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-20 md:w-32", className: "mt-4 " }
+      { src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80", aspect: "aspect-[4/5]", width: "w-16 md:w-24 lg:w-32" },
+      { src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80", aspect: "aspect-square", width: "w-16 md:w-24 lg:w-32", className: "mt-4 " }
     ]
   }
 ];
 
 export default function LandingPage() {
   return (
-    <main className="font-instrumental-sans text-gray-900 selection:bg-[#5C4DFF]/20 flex-1 flex flex-col justify-center items-center w-full pt-24 pb-16 md:pt-24 md:pb-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-50 via-white to-white">
+    <main className="font-instrumental-sans text-gray-900 selection:bg-[#5C4DFF]/20 flex-1 flex flex-col justify-center items-center w-full pb-16 md:pb-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-50 via-white to-white overflow-x-hidden">
       
       {/* --- Hero Section --- */}
-      <section className="w-full max-w-[95rem] mx-auto px-4 flex flex-col items-center text-center z-10">
+      <section className="w-full max-w-[95rem] mx-auto px-4 flex flex-col items-center text-center z-10 pt-10 md:pt-20">
         
         {/* --- Static Image Grid (Wave Effect) --- */}
-        <div className="relative w-full flex justify-center mb-10 md:mb-20">
-          <div className="flex items-center justify-center gap-2 md:gap-4 lg:gap-6 w-full px-4 flex-nowrap">
+        <div className="relative w-full flex justify-center mt-4 mb-10 md:mb-20">
+          <div className="flex items-center justify-center gap-2 md:gap-4 lg:gap-6 w-full px-2 sm:px-4 flex-nowrap">
             {HERO_COLUMNS.map((col, colIndex) => {
                // Responsive visibility: Show center columns on mobile, expand outwards on larger screens
                // Center index is 4. 
@@ -118,6 +117,7 @@ export default function LandingPage() {
                         src={img.src} 
                         alt="Professional Talent" 
                         fill 
+                        priority={colIndex >= 3 && colIndex <= 5}
                         className="object-cover w-full h-full"
                         sizes="(max-width: 768px) 100px, 200px"
                       />
@@ -179,7 +179,7 @@ function Card({ title, subtitle, imageSrc, href, theme }: CardProps) {
 
   return (
     <Link href={href} className="block w-full group">
-      <div className={`relative w-full h-[160px] md:h-[200px] rounded-[2rem] overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl hover:scale-[1.02] ${isDark ? 'bg-black border border-gray-800' : 'bg-white border border-gray-100 shadow-sm'}`}>
+      <div className={`relative w-full min-h-[160px] md:min-h-[200px] h-auto rounded-[2rem] overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl hover:scale-[1.02] ${isDark ? 'bg-black border border-gray-800' : 'bg-white border border-gray-100 shadow-sm'}`}>
         
         {/* Background Image */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
@@ -194,7 +194,7 @@ function Card({ title, subtitle, imageSrc, href, theme }: CardProps) {
 
         {/* Default Background (when not hovered) */}
         <div className={`absolute inset-0 transition-opacity duration-500 group-hover:opacity-0 ${isDark ? 'bg-[#111]' : 'bg-white'}`}>
-           <div className={`absolute inset-0 opacity-[0.03] bg-[url('/noise.png')]`} />
+           <div className={`absolute inset-0 opacity-[0.03] bg-noise`} />
         </div>
 
         {/* Content */}
