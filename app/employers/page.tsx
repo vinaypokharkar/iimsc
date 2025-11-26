@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Settings, Wrench, Users, Hourglass, Globe, ShieldCheck, CheckCircle } from "lucide-react";
 
+import Differentiators from "@/components/differentiators";
+
 export default function EmployerHome() {
   return (
     <main className="min-h-screen bg-[#EAEAEA] font-instrumental-sans text-gray-900 pb-20">
@@ -196,73 +198,7 @@ export default function EmployerHome() {
         </div>
 
         {/* --- 4. DIFFERENTIATORS SECTION --- */}
-        <div className="space-y-12">
-          <h2 className="text-center text-3xl md:text-5xl font-bold text-black">
-            What Makes IIMSC <span className="text-[#33348D]">Different</span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Diff 1 */}
-            <div className="bg-white rounded-[20px] p-8 md:p-10 flex justify-between items-start relative overflow-hidden h-[300px]">
-              <div className="relative z-10 max-w-[60%]">
-                <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
-                  Candidate-First <br /> Approach
-                </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  We put you at the center of everything. With 30+ years of combined expertise, we help Indian automotive professionals build real careers with Europe's most respected brands.
-                </p>
-              </div>
-              <div className="absolute right-0 bottom-0 text-[#7F7FFF] opacity-80 font-bold text-[200px] leading-none -mb-10 -mr-4">
-                1
-              </div>
-            </div>
-
-            {/* Diff 2 */}
-            <div className="bg-white rounded-[20px] p-8 md:p-10 flex justify-between items-start relative overflow-hidden h-[300px]">
-              <div className="relative z-10 max-w-[60%]">
-                <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
-                  Europe's Largest <br /> Automotive Network
-                </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Choose from 60+ top automotive companies across Europe. From passenger vehicles and trucks to machinery, modifications, tires, and inspection — we connect you to the right opportunity.
-                </p>
-              </div>
-              <div className="absolute right-0 bottom-0 text-[#7F7FFF] opacity-80 font-bold text-[200px] leading-none -mb-10 -mr-4">
-                2
-              </div>
-            </div>
-
-            {/* Diff 3 */}
-            <div className="bg-white rounded-[20px] p-8 md:p-10 flex justify-between items-start relative overflow-hidden h-[300px]">
-              <div className="relative z-10 max-w-[60%]">
-                <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
-                  Simple Process, <br /> Trusted Results
-                </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  With 1,200+ placements across 8 countries, our dedicated managers guide you from start to finish. No advance payments — your trust and success come first.
-                </p>
-              </div>
-              <div className="absolute right-0 bottom-0 text-[#7F7FFF] opacity-80 font-bold text-[200px] leading-none -mb-10 -mr-4">
-                3
-              </div>
-            </div>
-
-            {/* Diff 4 */}
-            <div className="bg-white rounded-[20px] p-8 md:p-10 flex justify-between items-start relative overflow-hidden h-[300px]">
-              <div className="relative z-10 max-w-[60%]">
-                <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
-                  Support Beyond <br /> Recruitment
-                </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  From job change guidance to relocation, family support, and settling your kids abroad — we stay with you long after placement. For us, it's a relationship, not a transaction.
-                </p>
-              </div>
-              <div className="absolute right-0 bottom-0 text-[#7F7FFF] opacity-80 font-bold text-[200px] leading-none -mb-10 -mr-4">
-                4
-              </div>
-            </div>
-          </div>
-        </div>
+        <Differentiators />
 
       </div>
     </main>
