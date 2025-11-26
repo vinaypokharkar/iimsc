@@ -229,7 +229,7 @@ function MarqueeRow({
     <div className="relative flex w-full overflow-hidden select-none mask-fade">
       <motion.div
         className="flex"
-        // variants={marqueeVariants}
+        variants={marqueeVariants}
         initial={{ x: direction === "left" ? 0 : "-50%" }}
         animate="animate"
       >
