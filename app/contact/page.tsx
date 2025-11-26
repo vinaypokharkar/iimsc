@@ -10,7 +10,7 @@ export default function ContactPage() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 className="text-4xl md:text-6xl font-display font-medium text-black tracking-tight mb-8 text-center">
-          Get in <span className="text-[#5C4DFF] italic">Touch</span>
+          Get in <span className="text-[#5C4DFF] ">Touch</span>
         </h1>
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-lg font-light">
           We'd love to hear from you. Please fill out the form below and we'll get back to you shortly.

@@ -35,7 +35,7 @@ export default function AboutUs() {
         {/* --- 2. INTRO CARD --- */}
         <section className="bg-white rounded-3xl sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 text-center shadow-sm">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 sm:mb-8 font-bold text-gray-900">
-            <span className="italic text-gradient">
+            <span className="text-gradient">
               Bridging the gap
             </span>{" "}
             <span>between Indian</span>
@@ -45,9 +45,9 @@ export default function AboutUs() {
             </span>
             <br className="hidden sm:block" />
             <span>with </span>
-            <span className="italic text-gradient">integrity</span>
+            <span className="text-gradient">integrity</span>
             <span> and </span>
-            <span className="italic text-gradient">excellence</span>
+            <span className="text-gradient">excellence</span>
             <span>.</span>
           </h2>
 

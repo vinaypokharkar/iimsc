@@ -39,7 +39,7 @@ export default function ITHiring() {
           
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight">
             IT & Tech <br />
-            <span className="text-[#5C4DFF] italic">Recruitment</span>
+            <span className="text-[#5C4DFF] ">Recruitment</span>
           </h2>
           
           <p className="text-gray-500 text-sm md:text-base max-w-3xl mx-auto leading-relaxed mb-10">

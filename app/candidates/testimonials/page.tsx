@@ -125,7 +125,7 @@ export default function TestimonialsPage() {
         {/* Section Heading */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-6xl font-bold text-[#313190]">
-            <span className="italic">Candidate Stories</span>
+            <span className="">Candidate Stories</span>
           </h2>
           <p className="text-gray-600 text-sm md:text-3xl max-w-3xl mx-auto">
             Hear directly from professionals who have successfully built their careers in Europe with IIMSC.
@@ -181,7 +181,7 @@ function TestimonialCard({ data }: { data: typeof TESTIMONIALS[0] }) {
       </div>
 
       {/* Quote */}
-      <p className="text-gray-600 text-sm md:text-base italic leading-relaxed">
+      <p className="text-gray-600 text-sm md:text-base  leading-relaxed">
         "{data.quote}"
       </p>
 

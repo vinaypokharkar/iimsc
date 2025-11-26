@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import Stats from '@/components/stats';
 import Differentiators from '@/components/differentiators';
+import FAQ from '@/components/faq';
 import { IconAboutUs, IconServices, IconSuccess } from '@/components/service-icons';
 
 const flags = [
@@ -157,6 +158,7 @@ export default function CandidateHome() {
       <div className="">
         <Stats />
         <Differentiators />
+        <FAQ />
       </div>
 
     </main>

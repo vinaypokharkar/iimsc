@@ -10,7 +10,7 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl sm:text-6xl font-bold text-black tracking-tight">
-            Explore Our <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent italic">Services</span>
+            Explore Our <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent ">Services</span>
           </h2>
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg font-light">
             Connecting the best talent with the best opportunities across borders.

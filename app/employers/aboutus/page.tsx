@@ -40,7 +40,7 @@ export default function EmployerAboutUs() {
           
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight">
             Bridging the Gap Between <br />
-            <span className="text-[#5C4DFF] italic">Talent & Opportunity</span>
+            <span className="text-[#5C4DFF] ">Talent & Opportunity</span>
           </h2>
           
           <p className="text-gray-500 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">

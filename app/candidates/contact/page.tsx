@@ -14,7 +14,7 @@ export default function CandidateContact() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-medium text-black tracking-tight mb-6">
-              Get in <span className="text-[#5C4DFF] italic">Touch</span>
+              Get in <span className="text-[#5C4DFF] ">Touch</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
               Have questions about your career in Europe? We're here to help you every step of the way.

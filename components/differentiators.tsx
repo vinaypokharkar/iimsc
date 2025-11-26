@@ -32,7 +32,7 @@ const Differentiators = () => {
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black tracking-tight leading-[1.1]">
               What Makes IIMSC <br/>
-              <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent italic">Different</span>
+              <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent pr-1 ">Different</span>
             </h2>
           </div>
           <p className="text-gray-600 max-w-md text-lg font-light pb-2">

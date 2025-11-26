@@ -25,7 +25,7 @@ const Stats = () => {
           <div className="max-w-xl">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-[1.1] tracking-tight mb-8">
               Numbers That Speak <br/>
-              <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent">for Themselves</span>
+              <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent pr-1 ">for Themselves</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed font-light">
               We've helped thousands of automotive professionals build global careers — and our results reflect the trust candidates place in us.

@@ -37,7 +37,7 @@ const Hero = () => {
             <h1 className="text-6xl md:text-8xl font-bold --font-instrumental-sans text-black leading-[1.05] tracking-tight">
               Talent{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent italic pr-2">
+                <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent  pr-1">
                   Beyond
                 </span>
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#5C4DFF] opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
