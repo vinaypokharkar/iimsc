@@ -35,9 +35,7 @@ const Differentiators = () => {
               <span className="bg-gradient-to-r from-[#5C4DFF] via-[#33348D] to-[#1E1E1E] bg-clip-text text-transparent pr-1 ">Different</span>
             </h2>
           </div>
-          <p className="text-gray-600 max-w-md text-lg font-light pb-2">
-            We don't just fill positions. We build bridges between potential and opportunity.
-          </p>
+         
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -49,13 +47,13 @@ const Differentiators = () => {
               <div className="relative z-10 flex flex-col h-full justify-between gap-8 ">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4 group-hover:text-[#33348D] transition-colors duration-300">{item.title}</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed max-w-xs">{item.description}</p>
+                  <p className="text-gray-600 text-base leading-relaxed max-w-sm">{item.description}</p>
                 </div>
               </div>
               
               {/* Decorative Number */}
-              <div className="absolute -right-4 -bottom-16 opacity-100 transition-opacity duration-500 pointer-events-none">
-                <span className="text-[10rem] sm:text-[15rem] font-bold text-[#5C4DFF] leading-none select-none opacity-80 bg-gradient-to-bl from-[#FFFFFF] via-[#5F61FF] to-[#C5C5C5] bg-clip-text text-transparent">
+              <div className="absolute -right-0 -bottom-6 opacity-100 transition-opacity duration-500 pointer-events-none">
+                <span className="text-[10rem] sm:text-[15rem] font-semibold text-[#5C4DFF] leading-none select-none opacity-70 bg-gradient-to-bl from-[#FFFFFF] via-[#5F61FF] to-[#C5C5C5] bg-clip-text text-transparent">
                   {item.number}
                 </span>
               </div>

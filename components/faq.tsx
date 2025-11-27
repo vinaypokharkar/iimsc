@@ -77,7 +77,7 @@ export default function FAQ() {
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex items-start justify-between p-6 sm:p-8 text-left focus:outline-none"
                   >
-                    <span className={`text-lg sm:text-xl font-medium pr-8 transition-colors duration-300 ${
+                    <span className={`text-lg sm:text-xl font-medium pr-8 transition-colors duration-300  ${
                       openIndex === index ? 'text-[#33348D]' : 'text-gray-900 group-hover:text-[#33348D]'
                     }`}>
                       {faq.question}

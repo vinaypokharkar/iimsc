@@ -23,26 +23,30 @@ export default function CandidateJobs() {
         jobTitle={selectedJob} 
       />
 
-      <section className="relative w-full h-[250px] md:h-[350px]">
-              {/* Background Image */}
-              {/* REPLACE src with your actual top image */}
-              <div className="absolute inset-0 w-full h-full">
-                <Image
-                  src="/open-position-bg.png"
-                  alt="Construction workers"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-              </div>
-      
-              {/* "OPEN POSITIONS" Huge Text Overlay */}
-              <div className="absolute top-10 left-0 w-full flex justify-start z-10 pointer-events-none ms-25">
-                <h1 className="text-[12vw] md:text-[150px] font-bold text-white tracking-widest leading-none select-none mix-blend-overlay font-bold tracking-tight">
-                  OPEN <br /> POSITIONS
-                </h1>
-              </div>
-            </section>
+      {/* --- 1. HERO SECTION --- */}
+      <section className="relative w-full h-[200px] sm:h-[200px] lg:h-[350px]">
+        {/* Background Image */}
+        <div className="absolute inset-0 ">
+          <Image
+            src="/open-position-bg.png"
+            alt="Open Positions"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-200/20 to-transparent mix-blend-overlay" />
+        </div>
+
+        {/* "OPEN POSITIONS" Huge Text Overlay */}
+        <div className="absolute inset-0 flex items-end justify-end z-10 pointer-events-none pb-8">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-[10vw] sm:text-[10vw] md:text-[6vw] lg:text-[4vw] font-bold text-white tracking-wide leading-none select-none">
+              OPEN POSITIONS
+            </h1>
+          </div>
+        </div>
+      </section>
 
       {/* Global Background Elements */}
       <div className="absolute inset-0 bg-noise opacity-20 z-0 pointer-events-none"></div>
@@ -51,8 +55,8 @@ export default function CandidateJobs() {
 
       
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto">
+      <div className="container mx-auto px-[15px] max-w-[1600px] py-12 sm:py-16 lg:py-20 space-y-16 sm:space-y-20 lg:space-y-24">
+      <div className="max-w-5xl mx-auto w-full">
           <div className="text-center mb-12">
             
             <p className="text-center text-gray-500 font-bold uppercase tracking-wider text-4xl space-y-8 mb-6 mt-12">
@@ -100,25 +104,38 @@ export default function CandidateJobs() {
               </div>
             ))}
           </div>
+      </div>
 
           {/* CTA Section */}
-          <div className="bg-[#1E1E1E] rounded-3xl p-12 text-center text-white relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">Don't see the right role?</h2>
-              <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+          <div className="bg-white rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between shadow-sm relative overflow-hidden min-h-[400px]">
+            <div className="flex-1 max-w-xl z-10 relative">
+              <h2 className="text-3xl md:text-5xl font-bold text-[#5C4DFF] mb-6">
+                Don't see the right role?
+              </h2>
+              <p className="text-gray-500 text-lg md:text-xl mb-10 leading-relaxed">
                 Submit your CV to our talent pool and we'll contact you when a suitable position opens up.
               </p>
               <button 
                 onClick={() => openModal('General Application')}
-                className="inline-flex items-center bg-white text-[#1E1E1E] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center bg-[#5C4DFF] text-white px-8 py-4 rounded-full font-bold hover:bg-[#4837cc] transition-all shadow-lg hover:shadow-[#5C4DFF]/30 hover:-translate-y-1"
               >
                 Submit General Application <ArrowRight className="ml-2 w-5 h-5" />
               </button>
             </div>
+            
+            {/* Image Container */}
+            <div className="hidden md:block w-[50%] h-full absolute right-0 top-0">
+               <Image 
+                 src="/cta-job.png" 
+                 alt="Professional" 
+                 fill
+                 className="object-cover object-center"
+               />
+               {/* Gradient to blend image */}
+               <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent"></div>
+            </div>
           </div>
 
-        </div>
       </div>
     </main>
   );

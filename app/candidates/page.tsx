@@ -48,8 +48,8 @@ export default function CandidateHome() {
           <div className="absolute inset-0 bg-black/60 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center">
-          <div className="max-w-3xl pb-24 sm:pb-0">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-end">
+          <div className="max-w-3xl pb-24 sm:pb-20">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               Build Your Career <br />
               <span className="">Across Borders</span>
@@ -85,14 +85,14 @@ export default function CandidateHome() {
 
       {/* --- Navigation Cards --- */}
       <section className="py-20 mt-6 relative z-20 px-4">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-8xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* About Us */}
-            <Link href="/candidates/aboutus" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[429px] mx-auto border border-gray-100 relative overflow-hidden">
+            <Link href="/candidates/aboutus" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[600px] mx-auto border border-gray-100 relative overflow-hidden">
               <div className="flex flex-col h-full justify-between relative z-10">
                 <div>
-                  <h3 className="text-3xl font-medium text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">About Us</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">About Us</h3>
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
                     <p className="text-gray-600 text-sm leading-relaxed overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                       Learn about our mission to empower Indian talent globally.
@@ -110,10 +110,10 @@ export default function CandidateHome() {
             </Link>
 
             {/* Additional Services */}
-            <Link href="/candidates/services" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[429px] mx-auto border border-gray-100 relative overflow-hidden">
+            <Link href="/candidates/services" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[600px] mx-auto border border-gray-100 relative overflow-hidden">
               <div className="flex flex-col h-full justify-between relative z-10">
                 <div>
-                  <h3 className="text-3xl font-medium text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">Additional Services</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">Additional Services</h3>
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
                     <p className="text-gray-600 text-sm leading-relaxed overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                       Visa assistance, relocation support, and more.
@@ -131,10 +131,10 @@ export default function CandidateHome() {
             </Link>
 
             {/* Success Stories */}
-            <Link href="/candidates/testimonials" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[429px] mx-auto border border-gray-100 relative overflow-hidden">
+            <Link href="/candidates/testimonials" className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[208px] w-full md:max-w-[600px] mx-auto border border-gray-100 relative overflow-hidden">
               <div className="flex flex-col h-full justify-between relative z-10">
                 <div>
-                  <h3 className="text-3xl font-medium text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">Success Stories</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 group-hover:text-[#33348D] transition-colors duration-300 mb-1">Success Stories</h3>
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
                     <p className="text-gray-600 text-sm leading-relaxed overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                       Hear from professionals who have successfully relocated.

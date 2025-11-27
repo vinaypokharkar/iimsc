@@ -7,11 +7,11 @@ export default function AboutUs() {
   return (
     <main className="min-h-screen bg-gray-100 font-instrumental-sans text-gray-900">
       {/* --- 1. HERO SECTION --- */}
-      <section className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px]">
+      <section className="relative w-full h-[200px] sm:h-[200px] lg:h-[350px]">
         {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 ">
           <Image
-            src="/about-bg.png"
+            src="/about-new.png"
             alt="Construction workers"
             fill
             className="object-cover object-center"
@@ -22,16 +22,16 @@ export default function AboutUs() {
         </div>
 
         {/* "ABOUT US" Huge Text Overlay */}
-        <div className="absolute inset-0 flex items-center justify-start z-10 pointer-events-none">
+        <div className="absolute inset-0 flex items-end justify-end z-10 pointer-events-none pb-8">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[150px] font-bold text-white tracking-wide leading-none select-none">
+            <h1 className="text-[10vw] sm:text-[10vw] md:text-[6vw] lg:text-[4vw] font-bold text-white tracking-wide leading-none select-none">
               ABOUT US
             </h1>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12 sm:py-16 lg:py-20 space-y-16 sm:space-y-20 lg:space-y-24">
+      <div className="container mx-auto px-[15px] max-w-[1600px] py-12 sm:py-16 lg:py-20 space-y-16 sm:space-y-20 lg:space-y-24">
         {/* --- 2. INTRO CARD --- */}
         <section className="bg-white rounded-3xl sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 text-center shadow-sm">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 sm:mb-8 font-bold text-gray-900">
@@ -51,7 +51,7 @@ export default function AboutUs() {
             <span>.</span>
           </h2>
 
-          <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto">
+          <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed max-w-4xl mx-auto">
             We are dedicated to bridging the gap between Indian talent and
             European opportunities. With years of experience in the recruitment
             industry, we understand the challenges and aspirations of
@@ -64,10 +64,10 @@ export default function AboutUs() {
         <section className="bg-white rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-sm flex flex-col lg:flex-row">
           {/* Text Side */}
           <div className="flex-1 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
-            <p className="text-gray-500 font-semibold uppercase tracking-wider text-sm sm:text-base mb-4 sm:mb-6">
+            <p className="text-gray-500 font-bold uppercase tracking-wider text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6">
               Our Mission
             </p>
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-b from-[#5C4DFF] to-[#cccccc] text-transparent bg-clip-text leading-snug">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold bg-gradient-to-b from-[#5C4DFF] to-[#cccccc] text-transparent bg-clip-text leading-snug">
               To empower skilled Indian professionals by connecting them with
               reputable employers in Europe, fostering a global exchange of
               talent and culture.
@@ -87,7 +87,7 @@ export default function AboutUs() {
 
         {/* --- 4. CORE VALUES --- */}
         <section className="space-y-8 sm:space-y-12">
-          <h3 className="text-center text-gray-500 font-bold uppercase tracking-wider text-sm sm:text-base">
+          <h3 className="text-center text-gray-500 font-bold uppercase tracking-wider text-xl sm:text-2xl lg:text-3xl">
             Our Core Values
           </h3>
 

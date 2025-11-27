@@ -69,26 +69,28 @@ export default function TestimonialsPage() {
     <main className="min-h-screen bg-gray-100 font-sans text-gray-900 pb-20">
       
       {/* --- 1. HERO SECTION (Header) --- */}
-      <section className="relative w-full h-[350px] md:h-[450px] overflow-hidden">
+      <section className="relative w-full h-[200px] sm:h-[200px] lg:h-[350px]">
         {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 ">
           {/* REPLACE with your local image path, e.g., src="/images/thumbs-up-guy.jpg" */}
           <Image
-            src="/testimonial-bg.png"
+            src="/testimonials-new.png"
             alt="Success Story"
             fill
             className="object-cover object-center"
             priority
           />
-          {/* Overlay to fade the image slightly for text contrast */}
-          <div className="absolute inset-0 bg-white/10" />
+          {/* Overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-200/20 to-transparent mix-blend-overlay" />
         </div>
 
-        {/* Giant Text Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <h1 className="text-[14vw] md:text-[160px] font-bold text-white tracking-widest leading-none  mix-blend-overlay select-none">
-            TESTIMONIALS
-          </h1>
+        {/* "TESTIMONIALS" Huge Text Overlay */}
+        <div className="absolute inset-0 flex items-end justify-end z-10 pointer-events-none pb-8">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-[10vw] sm:text-[10vw] md:text-[6vw] lg:text-[4vw] font-bold text-white tracking-wide leading-none select-none">
+              TESTIMONIALS
+            </h1>
+          </div>
         </div>
       </section>
 
@@ -124,7 +126,7 @@ export default function TestimonialsPage() {
         
         {/* Section Heading */}
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-6xl font-bold text-[#313190]">
+          <h2 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-[#5C4DFF]/90  to-[#33348D]/80 bg-clip-text text-transparent">
             <span className="">Candidate Stories</span>
           </h2>
           <p className="text-gray-600 text-sm md:text-3xl max-w-3xl mx-auto">
@@ -220,7 +222,7 @@ function MarqueeRow({
         repeat: Infinity,
         // Use a numeric easing array (cubic-bezier) instead of a string to satisfy the typings
         // [0, 0, 1, 1] is equivalent to a linear easing curve
-        ease: [0, 0, 1, 1],
+        ease: "linear",
       },
     },
   };
