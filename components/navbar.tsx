@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -66,18 +66,19 @@ const Navbar = () => {
                 <Link href="/employers/" className="text-gray-800 hover:text-[#5C4DFF] px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</Link>
                 <Link href="/employers/aboutus" className="text-gray-800 hover:text-[#5C4DFF] px-3 py-2 rounded-md text-sm font-medium transition-colors">About Us</Link>
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="text-gray-800 hover:text-[#5C4DFF] px-3 py-2 rounded-md text-sm font-medium flex items-center outline-none transition-colors">
-                    Hiring Solutions <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <DropdownMenuTrigger className="group text-gray-800 hover:text-[#5C4DFF] px-3 py-2 rounded-md text-sm font-medium flex items-center outline-none transition-colors data-[state=open]:text-[#5C4DFF] data-[state=open]:bg-gray-50">
+                    Hiring Solutions 
+                    <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem>
-                      <Link href="/employers/automotive-hiring" className="w-full">Automotive Hiring</Link>
+                  <DropdownMenuContent className="bg-white min-w-[200px]" align="start" sideOffset={8}>
+                    <DropdownMenuItem asChild>
+                      <Link href="/employers/automotive-hiring" className="w-full cursor-pointer font-medium text-gray-700 hover:text-[#5C4DFF]">Automotive Hiring</Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link href="/employers/it-hiring" className="w-full">IT Hiring</Link>
+                    <DropdownMenuItem asChild>
+                      <Link href="/employers/it-hiring" className="w-full cursor-pointer font-medium text-gray-700 hover:text-[#5C4DFF]">IT Hiring</Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link href="/employers/skilled-worker-hiring" className="w-full">Skilled Workers</Link>
+                    <DropdownMenuItem asChild>
+                      <Link href="/employers/skilled-worker-hiring" className="w-full cursor-pointer font-medium text-gray-700 hover:text-[#5C4DFF]">Skilled Workers</Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
