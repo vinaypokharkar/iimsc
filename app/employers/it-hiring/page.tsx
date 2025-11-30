@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Settings, Code, Server, Database, Shield, Cpu, Globe, ArrowRight } from "lucide-react";
+import EmployerCTA from "@/components/EmployerCTA";
 
 export default function ITHiring() {
   return (
@@ -14,7 +15,7 @@ export default function ITHiring() {
         {/* Background Image */}
         <div className="absolute inset-0 ">
            <Image 
-            src="https://placehold.co/1920x600/1a1a1a/ffffff?text=Dark+Textured+Background" 
+            src="/emp-aboutus.png" 
             alt="IT Hiring Background" 
             fill 
             className="object-cover object-center"
@@ -43,8 +44,8 @@ export default function ITHiring() {
           </div>
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 sm:mb-8 font-bold text-gray-900">
-            IT & Tech <br className="hidden sm:block" />
-            <span className="text-[#5C4DFF] ">Recruitment</span>
+            IT & Tech <br className="hidden sm:block" />  
+            <span className="bg-gradient-to-r from-[#5C4DFF]/90  to-[#33348D]/80 bg-clip-text text-transparent pr-1">Recruitment</span>
           </h2>
           
           <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed max-w-4xl mx-auto mb-10">
@@ -72,8 +73,8 @@ export default function ITHiring() {
               { title: "Web & Mobile", icon: Globe, desc: "Expert diagnostics and repair for all vehicle types." }
             ].map((role, i) => (
               <div key={i} className="bg-white rounded-3xl p-8 sm:p-10 flex flex-col items-start hover:shadow-lg transition-all duration-300 shadow-sm">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#E0E0FF] rounded-2xl flex items-center justify-center mb-6">
-                  <role.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#5C4DFF]" strokeWidth={1.5} />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#E0E0FF] rounded-2xl flex items-center justify-center mb-6 ">
+                  <role.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#5C4DFF] " strokeWidth={1.5} />
                 </div>
                 <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{role.title}</h4>
                 <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -122,28 +123,14 @@ export default function ITHiring() {
         </section>
 
         {/* --- 5. CTA SECTION --- */}
-        <section className="relative rounded-[40px] overflow-hidden h-[400px] md:h-[500px] w-full shadow-lg">
-          <Image 
-            src="https://placehold.co/1600x600/1a1a1a/ffffff?text=Tech+Team+Working" 
-            alt="Tech Team CTA" 
-            fill 
-            className="object-cover"
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
-
-          <div className="absolute inset-0 flex flex-col justify-center px-10 md:px-20 max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Scale Your Tech Team Today
-            </h2>
-            <p className="text-gray-200 text-lg mb-8 font-light">
-              Don't let talent shortages hold you back. Connect with top-tier developers now.
-            </p>
-            <Link href="/contact" className="bg-white text-[#33348D] px-10 py-4 rounded-full font-bold w-fit hover:bg-gray-100 transition-colors shadow-lg">
-              Contact Us
-            </Link>
-          </div>
-        </section>
+        <EmployerCTA 
+          title="Scale Your Tech Team Today"
+          description="Don't let talent shortages hold you back. Connect with top-tier developers now."
+          imageSrc="/emp-cta.png"
+          imageAlt="Tech Team CTA"
+          imageClassName="scale-110"
+          priority
+        />
 
       </div>
     </main>

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Settings, Wrench, PenTool, Truck, Zap, Hammer, ArrowRight } from "lucide-react";
+import EmployerCTA from "@/components/EmployerCTA";
 
 export default function AutomotiveHiring() {
   return (
@@ -44,7 +45,7 @@ export default function AutomotiveHiring() {
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 sm:mb-8 font-bold text-gray-900">
             Automotive <br className="hidden sm:block" />
-            <span className="text-[#5C4DFF] ">Hiring Solutions</span>
+            <span className="bg-gradient-to-r from-[#5C4DFF]/90  to-[#33348D]/80 bg-clip-text text-transparent pr-1">Hiring Solutions</span>
           </h2>
           
           <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed max-w-4xl mx-auto mb-10">
@@ -122,28 +123,14 @@ export default function AutomotiveHiring() {
         </section>
 
         {/* --- 5. CTA SECTION --- */}
-        <section className="relative rounded-[40px] overflow-hidden h-[400px] md:h-[500px] w-full shadow-lg">
-          <Image 
-            src="https://placehold.co/1600x600/1a1a1a/ffffff?text=Mechanic+Working" 
-            alt="Mechanic CTA" 
-            fill 
-            className="object-cover"
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
-
-          <div className="absolute inset-0 flex flex-col justify-center px-10 md:px-20 max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Need Skilled Automotive Staff?
-            </h2>
-            <p className="text-gray-200 text-lg mb-8 font-light">
-              Let us help you find the perfect candidates for your workshop or factory.
-            </p>
-            <Link href="/contact" className="bg-white text-[#33348D] px-10 py-4 rounded-full font-bold w-fit hover:bg-gray-100 transition-colors shadow-lg">
-              Contact Us
-            </Link>
-          </div>
-        </section>
+        <EmployerCTA 
+          title="Need Skilled Automotive Staff?"
+          description="Let us help you find the perfect candidates for your workshop or factory."
+          imageSrc="/emp-cta.png"
+          imageAlt="Mechanic CTA"
+          imageClassName="object-cover scale-110"
+          priority={true}
+        />
 
       </div>
     </main>

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Settings, Hammer, Heart, Coffee, HardHat, Truck, Utensils, ArrowRight } from "lucide-react";
+import EmployerCTA from "@/components/EmployerCTA";
 
 export default function SkilledWorkerHiring() {
   return (
@@ -14,7 +15,7 @@ export default function SkilledWorkerHiring() {
         {/* Background Image */}
         <div className="absolute inset-0 ">
            <Image 
-            src="https://placehold.co/1920x600/1a1a1a/ffffff?text=Dark+Textured+Background" 
+            src="/emp-aboutus.png" 
             alt="Skilled Worker Background" 
             fill 
             className="object-cover object-center"
@@ -44,7 +45,7 @@ export default function SkilledWorkerHiring() {
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 sm:mb-8 font-bold text-gray-900">
             Skilled Worker <br className="hidden sm:block" />
-            <span className="text-[#5C4DFF] ">Recruitment</span>
+            <span className="bg-gradient-to-r from-[#5C4DFF]/90  to-[#33348D]/80 bg-clip-text text-transparent pr-1">Recruitment</span>
           </h2>
           
           <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed max-w-4xl mx-auto mb-10">
@@ -122,28 +123,14 @@ export default function SkilledWorkerHiring() {
         </section>
 
         {/* --- 5. CTA SECTION --- */}
-        <section className="relative rounded-[40px] overflow-hidden h-[400px] md:h-[500px] w-full shadow-lg">
-          <Image 
-            src="https://placehold.co/1600x600/1a1a1a/ffffff?text=Worker+in+Action" 
-            alt="Skilled Worker CTA" 
-            fill 
-            className="object-cover"
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
-
-          <div className="absolute inset-0 flex flex-col justify-center px-10 md:px-20 max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Fill Your Vacancies Fast
-            </h2>
-            <p className="text-gray-200 text-lg mb-8 font-light">
-              We have a ready pool of skilled workers waiting for the right opportunity.
-            </p>
-            <Link href="/contact" className="bg-white text-[#33348D] px-10 py-4 rounded-full font-bold w-fit hover:bg-gray-100 transition-colors shadow-lg">
-              Contact Us
-            </Link>
-          </div>
-        </section>
+        <EmployerCTA 
+          title="Fill Your Vacancies Fast"
+          description="We have a ready pool of skilled workers waiting for the right opportunity."
+          imageSrc="/emp-cta.png"
+          imageAlt="Skilled Worker CTA"
+          imageClassName="scale-110"
+          priority
+        />
 
       </div>
     </main>
